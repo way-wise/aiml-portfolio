@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body data-spy="scroll" data-target=".main-menu">
     <!--====== Start Preloader ======-->
@@ -94,7 +95,6 @@
                   <li class="menu-item">
                     <a href="#about" class="page-scroll nav-link">About</a>
                   </li>
-                  
                   <li class="menu-item">
                     <a href="#portfolio" class="page-scroll nav-link"
                       >Portfolio</a
@@ -105,16 +105,36 @@
                       >Testimonial</a
                     >
                   </li>
+                  <li class="menu-item">
+                    <a href="#" class="page-scroll nav-link" id="contactBtn">Contact</a>
+                    <!-- contact popup -->
+                    <div class="contact-popup hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                        <div class="contact-popup-inner bg-white rounded-lg max-w-md w-full relative !p-8">
+                            <button class="close-popup absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+                                <i class="far fa-times"></i>
+                            </button>
+                            <h2 class="!text-2xl font-bold mb-4">Contact Us</h2>
+                            <div class="flex flex-col gap-2 text-gray-700 font-medium">
+                                <p>Email: <a href="mailto:support@waywisetech.com">support@waywisetech.com</a></p>
+                                <p>Phone: <a href="tel:+1 (310) 528-6170">+1 (310) 528-6170</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                   <!-- <li class="menu-item"><a href="#team" class="page-scroll nav-link">Team</a></li> -->
-                 
                 </ul>
               </nav>
             </div>
             <div class="header-right-nav">
               <ul>
                 <li class="bar-item">
-                  <a href="#"><img src="assets/images/dot.png" alt="dot" /></a>
-                </li>
+                                    <a href="#">
+                                        <!-- <img src="assets/images/dot.png" alt="dot"> -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                        </svg>
+                                    </a>
+                                </li>
                 <li class="navbar-toggle-btn">
                   <div class="navbar-toggler">
                     <span></span>
@@ -1226,5 +1246,30 @@
     <script src="assets/vendor/parallax.min.js"></script>
     <!--====== Main js ======-->
     <script src="assets/js/theme.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactBtn = document.getElementById('contactBtn');
+            const contactPopup = document.querySelector('.contact-popup');
+            const closePopup = document.querySelector('.close-popup');
+            // Open popup
+            contactBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                contactPopup.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+            });
+            // Close popup
+            closePopup.addEventListener('click', function() {
+                contactPopup.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+            // Close popup when clicking outside
+            contactPopup.addEventListener('click', function(e) {
+                if (e.target === contactPopup) {
+                    contactPopup.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        </script>
   </body>
 </html>
