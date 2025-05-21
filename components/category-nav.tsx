@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils"
 const categories = [
   { id: "Machine learning", label: "Machine Learning" },
   { id: "Deep Learning", label: "Deep Learning" },
-  { id: "LLM", label: "LLM" },
+  { id: "Computer Vision", label: "Computer Vision" },
   { id: "NLP", label: "NLP" },
+  { id: "LLM", label: "LLM" },
 ]
 
 interface CategoryNavProps {
@@ -21,12 +22,12 @@ export default function CategoryNav({ activeCategory, onCategoryChange }: Catego
         return "from-emerald-400 to-teal-600"
       case "Deep Learning":
         return "from-purple-400 to-indigo-600"
-      case "LLM":
-        return "from-rose-400 to-pink-600"
+      case "Computer Vision":
+        return "from-cyan-400 to-blue-600"
       case "NLP":
         return "from-amber-400 to-orange-600"
-      case "api":
-        return "from-cyan-400 to-blue-600"
+      case "LLM":
+        return "from-rose-400 to-pink-600"
       default:
         return "from-gray-700 to-gray-900"
     }
