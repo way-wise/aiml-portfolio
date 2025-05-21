@@ -73,7 +73,7 @@ export default function PortfolioCard({
             alt={item.title}
             width={600}
             height={400}
-            className="w-full h-96 object-contain"
+            className="w-full h-96 object-cover md:object-contain"
           />
           <span
             className={cn(
