@@ -18,15 +18,15 @@ interface CategoryNavProps {
 export default function CategoryNav({ activeCategory, onCategoryChange }: CategoryNavProps) {
   const getCategoryGradient = (category: string) => {
     switch (category) {
-      case "Machine Learning":
+      case "machine-learning":
         return "from-emerald-400 to-teal-600"
-      case "Deep Learning":
+      case "deep-learning":
         return "from-purple-400 to-indigo-600"
-      case "Computer Vision":
+      case "computer-vision":
         return "from-cyan-400 to-blue-600"
-      case "NLP":
+      case "nlp":
         return "from-amber-400 to-orange-600"
-      case "LLM":
+      case "llm":
         return "from-rose-400 to-pink-600"
       default:
         return "from-gray-700 to-gray-900"
