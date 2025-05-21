@@ -97,11 +97,11 @@ export const portfolioItems: PortfolioItem[] = [
   
   {
     id: "llm-1",
-    title: "Deshboard",
-    description: "Deshboard for manage users and products and analytics.",
+    title: "SmartLegalBot – AI Legal Assistant for Contract Review",
+    description: "SmartLegalBot is an AI-powered assistant that helps users review legal contracts, highlight risky clauses, suggest simplified rewrites, and answer basic legal queries — all using a fine-tuned LLM trained on legal documents.",
     category: "llm",
-    highlightKeyword: "Laravel Dashboard",
-    image: "/web/web-6.webp",
+    highlightKeyword: "LLM",
+    image: "/ai/llm.png",
     technologies: ["Node.js", "Socket.io", "PostgreSQL"],
     demoUrl: "https://example.com/demo",
     githubUrl: "https://github.com/example/project",
