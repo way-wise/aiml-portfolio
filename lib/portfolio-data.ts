@@ -39,16 +39,16 @@ export const portfolioItems: PortfolioItem[] = [
 
 
 export const sectionInfo = {
-  "backend": {
-    "title": "Backend Projects",
-    "description": "Explore my backend projects with a focus on scalability and performance."
+  "deep-learning": {
+    "title": "Deep Learning",
+    "description": "Explore my Deep Learning projects with a focus on scalability and performance."
   },
-  "mobile": {
-    "title": "Mobile Projects",
-    "description": "Discover my mobile app projects with a range of features and capabilities."
+  "machine-learning": {
+    "title": "Machine Learning",
+    "description": "Discover my Machine Learning projects with a range of features and capabilities."
   },
-  "frontend": {
-    "title": "Frontend Projects",
+  "computer-vision": {
+    "title": "Computer Vision",
     "description": "Check out my frontend projects with a focus on user experience and design."
   },
   "nocode": {
