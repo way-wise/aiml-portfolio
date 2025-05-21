@@ -33,6 +33,26 @@ export const portfolioItems: PortfolioItem[] = [
       "End-to-end encryption",
     ],
   },
+
+
+  {
+    id: "cv-1",
+    title: "Deshboard",
+    description: "Deshboard for manage users and products and analytics.",
+    category: "computer-vision",
+    highlightKeyword: "Laravel Dashboard",
+    image: "/web/web-6.webp",
+    technologies: ["Node.js", "Socket.io", "PostgreSQL"],
+    demoUrl: "https://example.com/demo",
+    githubUrl: "https://github.com/example/project",
+    completionDate: "August 2023",
+    features: [
+      "Real-time message delivery",
+      "User presence detection",
+      "Message history storage",
+      "End-to-end encryption",
+    ],
+  },
   
   
 ]
