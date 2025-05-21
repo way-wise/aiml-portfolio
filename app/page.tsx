@@ -118,7 +118,7 @@ export default function Home() {
                 {sectionInfo[category as SectionKey]?.description || "Explore my work in this category."}
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-8">
               {itemsByCategory[category].map((item, index) => (
                 <PortfolioCard
                   key={item.id + index}
