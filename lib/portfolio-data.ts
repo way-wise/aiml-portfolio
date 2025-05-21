@@ -61,7 +61,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Deshboard for manage users and products and analytics.",
     category: "computer-vision",
     highlightKeyword: "Laravel Dashboard",
-    image: "/web/web-6.webp",
+    image: "/ai/face_login System design.png",
     technologies: ["Node.js", "Socket.io", "PostgreSQL"],
     demoUrl: "https://example.com/demo",
     githubUrl: "https://github.com/example/project",
