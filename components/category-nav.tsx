@@ -3,11 +3,11 @@
 import { cn } from "@/lib/utils"
 
 const categories = [
-  { id: "Machine learning", label: "Machine Learning" },
-  { id: "Deep Learning", label: "Deep Learning" },
-  { id: "Computer Vision", label: "Computer Vision" },
-  { id: "NLP", label: "NLP" },
-  { id: "LLM", label: "LLM" },
+  { id: "machine-learning", label: "Machine Learning" },
+  { id: "deep-learning", label: "Deep Learning" },
+  { id: "computer-vision", label: "Computer Vision" },
+  { id: "nlp", label: "NLP" },
+  { id: "llm", label: "LLM" },
 ]
 
 interface CategoryNavProps {
