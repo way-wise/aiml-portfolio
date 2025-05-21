@@ -57,12 +57,12 @@ export const portfolioItems: PortfolioItem[] = [
 
   {
     id: "cv-1",
-    title: "Deshboard",
-    description: "Deshboard for manage users and products and analytics.",
+    title: "Computer Vision Face Login System",
+    description: "Face Login System for manage users and products and analytics.",
     category: "computer-vision",
-    highlightKeyword: "Laravel Dashboard",
+    highlightKeyword: "Computer Vision",
     image: "/ai/face_login System design.png",
-    technologies: ["Node.js", "Socket.io", "PostgreSQL"],
+    technologies: [""],
     demoUrl: "https://example.com/demo",
     githubUrl: "https://github.com/example/project",
     completionDate: "August 2023",
