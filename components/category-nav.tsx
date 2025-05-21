@@ -3,10 +3,10 @@
 import { cn } from "@/lib/utils"
 
 const categories = [
-  { id: "backend-api", label: "Backend & API" },
-  { id: "mobile", label: "Mobile App" },
-  { id: "frontend", label: "Frontend" },
-  { id: "nocode", label: "No Code Solutions" },
+  { id: "Machine learning", label: "Machine Learning" },
+  { id: "Deep Learning", label: "Deep Learning" },
+  { id: "LLM", label: "LLM" },
+  { id: "NLP", label: "NLP" },
 ]
 
 interface CategoryNavProps {
@@ -17,13 +17,13 @@ interface CategoryNavProps {
 export default function CategoryNav({ activeCategory, onCategoryChange }: CategoryNavProps) {
   const getCategoryGradient = (category: string) => {
     switch (category) {
-      case "backend":
+      case "Machine Learning":
         return "from-emerald-400 to-teal-600"
-      case "mobile":
+      case "Deep Learning":
         return "from-purple-400 to-indigo-600"
-      case "frontend":
+      case "LLM":
         return "from-rose-400 to-pink-600"
-      case "nocode":
+      case "NLP":
         return "from-amber-400 to-orange-600"
       case "api":
         return "from-cyan-400 to-blue-600"
