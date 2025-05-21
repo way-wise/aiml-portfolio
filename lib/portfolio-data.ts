@@ -16,10 +16,10 @@ export interface PortfolioItem {
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    id: "dl-1",
+    id: "ml-1",
     title: "Deshboard",
     description: "Deshboard for manage users and products and analytics.",
-    category: "deep-learning",
+    category: "machine-learning",
     highlightKeyword: "Laravel Dashboard",
     image: "/web/web-6.webp",
     technologies: ["Node.js", "Socket.io", "PostgreSQL"],
@@ -39,21 +39,25 @@ export const portfolioItems: PortfolioItem[] = [
 
 
 export const sectionInfo = {
+  "machine-learning": {
+    "title": "Machine Learning",
+    "description": "Explore my Machine Learning projects with a focus on scalability and performance."
+  },
   "deep-learning": {
     "title": "Deep Learning",
     "description": "Explore my Deep Learning projects with a focus on scalability and performance."
   },
-  "machine-learning": {
-    "title": "Machine Learning",
-    "description": "Discover my Machine Learning projects with a range of features and capabilities."
-  },
   "computer-vision": {
     "title": "Computer Vision",
-    "description": "Check out my frontend projects with a focus on user experience and design."
+    "description": "Discover my Computer Vision projects with a range of features and capabilities."
   },
-  "nocode": {
-    "title": "No-code Projects",
-    "description": "Explore my no-code projects with a range of features and capabilities."
+  "nlp": {
+    "title": "NLP",
+    "description": "Check out my NLP projects with a focus on user experience and design."
+  },
+  "llm": {
+    "title": "LLM",
+    "description": "Explore my LLM projects with a range of features and capabilities."
   },
   "api": {
     "title": "API Projects",
