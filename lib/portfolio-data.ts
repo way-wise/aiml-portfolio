@@ -36,10 +36,70 @@ export const portfolioItems: PortfolioItem[] = [
 
 
   {
+    id: "dl-1",
+    title: "Deshboard",
+    description: "Deshboard for manage users and products and analytics.",
+    category: "deep-learning",
+    highlightKeyword: "Laravel Dashboard",
+    image: "/web/web-6.webp",
+    technologies: ["Node.js", "Socket.io", "PostgreSQL"],
+    demoUrl: "https://example.com/demo",
+    githubUrl: "https://github.com/example/project",
+    completionDate: "August 2023",
+    features: [
+      "Real-time message delivery",
+      "User presence detection",
+      "Message history storage",
+      "End-to-end encryption",
+    ],
+  },
+
+
+  {
     id: "cv-1",
     title: "Deshboard",
     description: "Deshboard for manage users and products and analytics.",
     category: "computer-vision",
+    highlightKeyword: "Laravel Dashboard",
+    image: "/web/web-6.webp",
+    technologies: ["Node.js", "Socket.io", "PostgreSQL"],
+    demoUrl: "https://example.com/demo",
+    githubUrl: "https://github.com/example/project",
+    completionDate: "August 2023",
+    features: [
+      "Real-time message delivery",
+      "User presence detection",
+      "Message history storage",
+      "End-to-end encryption",
+    ],
+  },
+
+  
+  {
+    id: "nlp-1",
+    title: "Deshboard",
+    description: "Deshboard for manage users and products and analytics.",
+    category: "nlp",
+    highlightKeyword: "Laravel Dashboard",
+    image: "/web/web-6.webp",
+    technologies: ["Node.js", "Socket.io", "PostgreSQL"],
+    demoUrl: "https://example.com/demo",
+    githubUrl: "https://github.com/example/project",
+    completionDate: "August 2023",
+    features: [
+      "Real-time message delivery",
+      "User presence detection",
+      "Message history storage",
+      "End-to-end encryption",
+    ],
+  },
+
+  
+  {
+    id: "llm-1",
+    title: "Deshboard",
+    description: "Deshboard for manage users and products and analytics.",
+    category: "llm",
     highlightKeyword: "Laravel Dashboard",
     image: "/web/web-6.webp",
     technologies: ["Node.js", "Socket.io", "PostgreSQL"],
