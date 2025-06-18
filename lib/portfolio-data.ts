@@ -122,25 +122,6 @@ export const portfolioItems: PortfolioItem[] = [
 			"Batch question handling",
 		],
 	},
-	{
-		id: "dl-1",
-		title: "SmartHelmet AI",
-		description:
-			"SmartHelmet AI – Real-time Safety Violation Detection Using Deep Learning",
-		category: "deep-learning",
-		highlightKeyword: "Deep Learning",
-		image: "/ai/dl.png",
-		technologies: ["Python", "TensorFlow", "PostgreSQL"],
-		demoUrl: "https://example.com/demo",
-		githubUrl: "https://github.com/example/project",
-		completionDate: "August 2023",
-		features: [
-			"Real-time message delivery",
-			"User presence detection",
-			"Message history storage",
-			"End-to-end encryption",
-		],
-	},
 
 	// {
 	// 	id: "cv-1",
@@ -467,6 +448,25 @@ export const portfolioItems: PortfolioItem[] = [
 			"Automated evaluation pipeline",
 		],
 	},
+	{
+		id: "dl-1",
+		title: "SmartHelmet AI",
+		description:
+			"SmartHelmet AI – Real-time Safety Violation Detection Using Deep Learning",
+		category: "deep-learning",
+		highlightKeyword: "Deep Learning",
+		image: "/ai/dl.png",
+		technologies: ["Python", "TensorFlow", "PostgreSQL"],
+		demoUrl: "https://example.com/demo",
+		githubUrl: "https://github.com/example/project",
+		completionDate: "August 2023",
+		features: [
+			"Real-time message delivery",
+			"User presence detection",
+			"Message history storage",
+			"End-to-end encryption",
+		],
+	},
 ];
 
 export const sectionInfo = {
@@ -475,11 +475,7 @@ export const sectionInfo = {
 		description:
 			"Explore my Machine Learning projects with a focus on scalability and performance.",
 	},
-	"deep-learning": {
-		title: "Deep Learning",
-		description:
-			"Explore my Deep Learning projects with a focus on scalability and performance.",
-	},
+
 	"computer-vision": {
 		title: "Computer Vision",
 		description:
@@ -494,6 +490,11 @@ export const sectionInfo = {
 		title: "LLM",
 		description:
 			"Explore my LLM projects with a range of features and capabilities.",
+	},
+	"deep-learning": {
+		title: "Deep Learning",
+		description:
+			"Explore my Deep Learning projects with a focus on scalability and performance.",
 	},
 	api: {
 		title: "API Projects",
