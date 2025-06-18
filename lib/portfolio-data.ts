@@ -1,147 +1,503 @@
 export interface PortfolioItem {
-  id: string
-  title: string
-  description: string
-  category: string
-  highlightKeyword?: string
-  image: string
-  technologies: string[]
-  demoUrl?: string
-  githubUrl?: string
-  completionDate?: string
-  longDescription?: string
-  features?: string[]
-  process?: string
+	id: string;
+	title: string;
+	description: string;
+	category: string;
+	highlightKeyword?: string;
+	image: string;
+	technologies: string[];
+	demoUrl?: string;
+	githubUrl?: string;
+	completionDate?: string;
+	longDescription?: string;
+	features?: string[];
+	process?: string;
 }
 
 export const portfolioItems: PortfolioItem[] = [
-  {
-    id: "ml-1",
-    title: "Predictive Maintenance System",
-    description: "Predictive Maintenance System for manage users and products and analytics.",
-    category: "machine-learning",
-    highlightKeyword: "Machine Learning",
-    image: "/ai/pd2.png",
-    technologies: ["Python", "TensorFlow", "PostgreSQL"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com/example/project",
-    completionDate: "August 2023",
-    features: [
-      "Real-time message delivery",
-      "User presence detection",
-      "Message history storage",
-      "End-to-end encryption",
-    ],
-  },
+	{
+		id: "ml-0",
+		title: "Predictive Maintenance System",
+		description:
+			"Predictive Maintenance System for manage users and products and analytics.",
+		category: "machine-learning",
+		highlightKeyword: "Machine Learning",
+		image: "/ai/pd2.png",
+		technologies: ["Python", "TensorFlow", "PostgreSQL"],
+		demoUrl: "https://example.com/demo",
+		githubUrl: "https://github.com/example/project",
+		completionDate: "August 2023",
+		features: [
+			"Real-time message delivery",
+			"User presence detection",
+			"Message history storage",
+			"End-to-end encryption",
+		],
+	},
 
+	{
+		id: "ml-1",
+		title: "Advanced Sentiment Analysis System",
+		description:
+			"Revolutionized customer feedback analysis with multi-domain sentiment classification, sarcasm detection, and real-time analytics.",
+		category: "machine-learning",
+		highlightKeyword: "Machine Learning",
+		image: "/ai/ml1.png",
+		technologies: [
+			"Python",
+			"PyTorch",
+			"FastAPI",
+			"Hugging Face",
+			"PostgreSQL",
+			"Docker",
+		],
+		demoUrl: "https://example.com/sentiment-demo",
+		githubUrl: "https://github.com/example/sentiment-analysis",
+		completionDate: "June 2023",
+		features: [
+			"Multi-domain sentiment classification (92% accuracy)",
+			"Sarcasm detection (85% accuracy)",
+			"Real-time processing pipeline",
+			"Aspect-based sentiment analysis",
+			"REST API integration",
+			"Custom visualization dashboard",
+		],
+	},
+	{
+		id: "ml-2",
+		title: "Multilingual Text Summarization",
+		description:
+			"Developed a multilingual summarization system supporting 5 languages with real-time abstractive and extractive capabilities.",
+		category: "machine-learning",
+		highlightKeyword: "Natural Language Processing",
+		image: "/ai/ml2.png",
+		technologies: [
+			"Python",
+			"TensorFlow",
+			"spaCy",
+			"NLTK",
+			"Flask",
+			"MongoDB",
+			"Docker",
+		],
+		demoUrl: "https://example.com/summarization-demo",
+		githubUrl: "https://github.com/example/multilingual-summarization",
+		completionDate: "May 2023",
+		features: [
+			"Cross-lingual summarization (5 languages)",
+			"Abstractive and extractive summarization",
+			"Language detection and preprocessing",
+			"Custom quality metrics and evaluation",
+			"Batch processing capability",
+			"API integration",
+		],
+	},
 
-  {
-    id: "dl-1",
-    title: "SmartHelmet AI",
-    description: "SmartHelmet AI – Real-time Safety Violation Detection Using Deep Learning",
-    category: "deep-learning",
-    highlightKeyword: "Deep Learning",
-    image: "/ai/dl.png",
-    technologies: ["Python", "TensorFlow", "PostgreSQL"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com/example/project",
-    completionDate: "August 2023",
-    features: [
-      "Real-time message delivery",
-      "User presence detection",
-      "Message history storage",
-      "End-to-end encryption",
-    ],
-  },
+	{
+		id: "ml-3",
+		title: "Question Answering System",
+		description:
+			"Built an intelligent educational QA system with BERT-based architecture, multi-hop reasoning, and real-time query responses.",
+		category: "machine-learning",
+		highlightKeyword: "AI in Education",
+		image: "/ai/ml3.png",
+		technologies: [
+			"Python",
+			"PyTorch",
+			"FastAPI",
+			"React",
+			"Hugging Face",
+			"Elasticsearch",
+			"Docker",
+		],
+		demoUrl: "https://example.com/qa-demo",
+		githubUrl: "https://github.com/example/qa-system",
+		completionDate: "April 2023",
+		features: [
+			"Context-aware question answering",
+			"Multi-hop reasoning",
+			"Source attribution and confidence scoring",
+			"Real-time student support",
+			"Interactive learning interface",
+			"Batch question handling",
+		],
+	},
+	{
+		id: "dl-1",
+		title: "SmartHelmet AI",
+		description:
+			"SmartHelmet AI – Real-time Safety Violation Detection Using Deep Learning",
+		category: "deep-learning",
+		highlightKeyword: "Deep Learning",
+		image: "/ai/dl.png",
+		technologies: ["Python", "TensorFlow", "PostgreSQL"],
+		demoUrl: "https://example.com/demo",
+		githubUrl: "https://github.com/example/project",
+		completionDate: "August 2023",
+		features: [
+			"Real-time message delivery",
+			"User presence detection",
+			"Message history storage",
+			"End-to-end encryption",
+		],
+	},
 
+	// {
+	// 	id: "cv-1",
+	// 	title: "Computer Vision Face Login System",
+	// 	description:
+	// 		"Face Login System for manage users and products and analytics.",
+	// 	category: "computer-vision",
+	// 	highlightKeyword: "Computer Vision",
+	// 	image: "/ai/face_login System design.png",
+	// 	technologies: ["Python", "TensorFlow", "PostgreSQL"],
+	// 	demoUrl: "https://example.com/demo",
+	// 	githubUrl: "https://github.com/example/project",
+	// 	completionDate: "August 2023",
+	// 	features: [
+	// 		"Real-time message delivery",
+	// 		"User presence detection",
+	// 		"Message history storage",
+	// 		"End-to-end encryption",
+	// 	],
+	// },
+	{
+		id: "cv-2",
+		title: "Real-time Object Detection System",
+		description:
+			"Developed a cutting-edge real-time object detection system for autonomous vehicles that processes multiple camera feeds simultaneously with sub-millisecond latency. The system uses a custom YOLOv8 architecture optimized for edge deployment.",
+		category: "computer-vision",
+		highlightKeyword: "Machine Learning",
+		image: "/ml/real-time.png",
+		technologies: [
+			"Python 3.8+",
+			"PyTorch",
+			"OpenCV",
+			"TensorRT",
+			"CUDA",
+			"FastAPI",
+			"Docker",
+			"NVIDIA Jetson",
+		],
+		demoUrl: "#",
+		githubUrl: "#",
+		completionDate: "August 2023",
+		features: [
+			"Real-time object detection (30+ FPS)",
+			"Multi-camera synchronization",
+			"Custom object classification (100+ classes)",
+			"Distance estimation and tracking",
+			"Weather condition adaptation",
+		],
+	},
+	{
+		id: "cv-3",
+		title: "Facial Emotion Recognition",
+		description:
+			"Built an advanced facial emotion recognition system that analyzes customer emotions in real-time across multiple retail locations. The system uses a custom CNN architecture with attention mechanisms for accurate emotion detection.",
+		category: "computer-vision",
+		highlightKeyword: "Machine Learning",
+		image: "/ml/facial-emotion.png",
+		technologies: [
+			"Python 3.8+",
+			"PyTorch",
+			"OpenCV",
+			"TensorRT",
+			"FastAPI",
+			"Docker",
+			"AWS",
+		],
+		demoUrl: "#",
+		githubUrl: "#",
+		completionDate: "August 2023",
+		features: [
+			"Real-time emotion detection (7 basic emotions)",
+			"Multi-person tracking",
+			"Age and gender estimation",
+			"Attention level analysis",
+			"Custom emotion intensity scoring",
+		],
+	},
+	{
+		id: "cv-4",
+		title: "High-Performance Face Authentication System",
+		description:
+			"Developed a revolutionary face authentication system capable of processing over 1 million face embeddings with sub-millisecond search time. The system uses a custom implementation of HNSWLib for ultra-fast similarity search.",
+		category: "computer-vision",
+		highlightKeyword: "Machine Learning",
+		image: "/ml/high-performance.png",
+		technologies: [
+			"Python 3.8+",
+			"PyTorch",
+			"OpenCV",
+			"TensorRT",
+			"FastAPI",
+			"Docker",
+			"AWS",
+		],
+		demoUrl: "#",
+		githubUrl: "#",
+		completionDate: "August 2023",
+		features: [
+			"Sub-millisecond search time (0.50 ms)",
+			"Support for 1M+ face embeddings",
+			"Anti-spoofing measures",
+			"Real-time monitoring",
+			"Multi-factor authentication",
+		],
+	},
 
-  {
-    id: "cv-1",
-    title: "Computer Vision Face Login System",
-    description: "Face Login System for manage users and products and analytics.",
-    category: "computer-vision",
-    highlightKeyword: "Computer Vision",
-    image: "/ai/face_login System design.png",
-    technologies: ["Python", "TensorFlow", "PostgreSQL"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com/example/project",
-    completionDate: "August 2023",
-    features: [
-      "Real-time message delivery",
-      "User presence detection",
-      "Message history storage",
-      "End-to-end encryption",
-    ],
-  },
+	{
+		id: "cv-5",
+		title: "Medical Image Segmentation",
+		description:
+			"Created an advanced medical image segmentation system for accurate organ and tumor detection in CT and MRI scans. The system uses a custom U-Net architecture with attention mechanisms for precise segmentation.",
+		category: "computer-vision",
+		highlightKeyword: "Machine Learning",
+		image: "/ml/medical-image.png",
+		technologies: [
+			"Python 3.8+",
+			"PyTorch",
+			"OpenCV",
+			"TensorRT",
+			"YOLOv8",
+			"CUDA",
+			"FastAPI",
+			"Docker",
+			"AWS",
+			"HNSWLib",
+		],
+		demoUrl: "#",
+		githubUrl: "#",
+		completionDate: "August 2023",
+		features: [
+			"Multi-organ segmentation",
+			"Tumor detection and classification",
+			"3D volume reconstruction",
+			"Automated report generation",
+			"Real-time processing",
+		],
+	},
 
-  
-  {
-    id: "nlp-1",
-    title: "Sentimail",
-    description: "A smart NLP tool that automatically analyzes incoming customer support emails and classifies them into Positive, Negative, or Neutral sentiment.",
-    category: "nlp",
-    highlightKeyword:"NLP",
-    image: "/ai/nlp.png",
-    technologies: ["Python", "TensorFlow", "PostgreSQL"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com/example/project",
-    completionDate: "August 2023",
-    features: [
-      "Real-time message delivery",
-      "User presence detection",
-      "Message history storage",
-      "End-to-end encryption",
-    ],
-  },
+	{
+		id: "nlp-1",
+		title: "Sentimail",
+		description:
+			"A smart NLP tool that automatically analyzes incoming customer support emails and classifies them into Positive, Negative, or Neutral sentiment.",
+		category: "nlp",
+		highlightKeyword: "NLP",
+		image: "/ai/nlp.png",
+		technologies: ["Python", "TensorFlow", "PostgreSQL"],
+		demoUrl: "https://example.com/demo",
+		githubUrl: "https://github.com/example/project",
+		completionDate: "August 2023",
+		features: [
+			"Real-time message delivery",
+			"User presence detection",
+			"Message history storage",
+			"End-to-end encryption",
+		],
+	},
 
-  
-  {
-    id: "llm-1",
-    title: "SmartLegalBot – AI Legal Assistant for Contract Review",
-    description: "SmartLegalBot is an AI-powered assistant that helps users review legal contracts, highlight risky clauses, suggest simplified rewrites, and answer basic legal queries — all using a fine-tuned LLM trained on legal documents.",
-    category: "llm",
-    highlightKeyword: "LLM",
-    image: "/ai/llm.png",
-    technologies: ["Node.js", "Socket.io", "PostgreSQL"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com/example/project",
-    completionDate: "August 2023",
-    features: [
-      "Real-time message delivery",
-      "User presence detection",
-      "Message history storage",
-      "End-to-end encryption",
-    ],
-  },
-  
-  
-]
+	{
+		id: "nlp-2",
+		title: "Advanced Sentiment Analysis System",
+		description:
+			"A state-of-the-art sentiment analysis system processing 1M+ customer reviews daily with 95% accuracy. Features custom BERT architecture, real-time analysis, multi-language support, and emotion detection for improved customer service.",
+		category: "nlp",
+		highlightKeyword: "NLP",
+		image: "/ai/nlp1.png",
+		technologies: [
+			"Python 3.8+",
+			"PyTorch",
+			"Hugging Face Transformers",
+			"FastAPI",
+			"Redis",
+			"Docker",
+			"AWS (SageMaker, EC2)",
+		],
+		demoUrl: "",
+		githubUrl: "",
+		completionDate: "",
+		features: [
+			"Real-time sentiment analysis with 200ms response time",
+			"Multi-language support (English, Spanish, French, German)",
+			"Aspect-based sentiment analysis for detailed feedback",
+			"Custom emotion detection for 27 distinct emotions",
+			"Automated response generation for customer service",
+		],
+	},
+	{
+		id: "nlp-3",
+		title: "Multilingual Text Summarization",
+		description:
+			"A powerful summarization system for generating concise, informative summaries across 8 languages. Supports abstractive/extractive modes, plagiarism detection, and custom length summaries for cross-platform use.",
+		category: "nlp",
+		highlightKeyword: "NLP",
+		image: "/ai/nlp2.png",
+		technologies: [
+			"Python 3.8+",
+			"PyTorch",
+			"Transformers",
+			"FastAPI",
+			"MongoDB",
+			"Docker",
+			"AWS",
+		],
+		demoUrl: "",
+		githubUrl: "",
+		completionDate: "",
+		features: [
+			"Multi-language summarization (8 languages)",
+			"Abstractive and extractive summarization modes",
+			"Custom length control for different platforms",
+			"Key point extraction and highlighting",
+			"Plagiarism detection and prevention",
+		],
+	},
+	{
+		id: "nlp-4",
+		title: "Question Answering System",
+		description:
+			"An advanced question answering system using retrieval-augmented generation and knowledge graph integration. Delivers fast, accurate answers across complex multi-document datasets.",
+		category: "nlp",
+		highlightKeyword: "NLP",
+		image: "/ai/nlp3.png",
+		technologies: [
+			"Python 3.8+",
+			"PyTorch",
+			"Transformers",
+			"Neo4j",
+			"FastAPI",
+			"Redis",
+			"Docker",
+		],
+		demoUrl: "",
+		githubUrl: "",
+		completionDate: "",
+		features: [
+			"Context-aware answer generation",
+			"Multi-document reasoning",
+			"Custom knowledge graph integration",
+			"Real-time answer validation",
+			"User feedback learning system",
+		],
+	},
 
+	{
+		id: "llm-1",
+		title: "SmartLegalBot – AI Legal Assistant for Contract Review",
+		description:
+			"SmartLegalBot is an AI-powered assistant that helps users review legal contracts, highlight risky clauses, suggest simplified rewrites, and answer basic legal queries — all using a fine-tuned LLM trained on legal documents.",
+		category: "llm",
+		highlightKeyword: "LLM",
+		image: "/ai/llm.png",
+		technologies: ["Node.js", "Socket.io", "PostgreSQL"],
+		demoUrl: "https://example.com/demo",
+		githubUrl: "https://github.com/example/project",
+		completionDate: "August 2023",
+		features: [
+			"Real-time message delivery",
+			"User presence detection",
+			"Message history storage",
+			"End-to-end encryption",
+		],
+	},
+
+	{
+		id: "llm-2",
+		title: "Custom LLM Development",
+		description:
+			"Developed a custom large language model from scratch, optimized for enterprise applications. The model was trained on domain-specific data and fine-tuned for various business use cases, achieving state-of-the-art performance while maintaining efficiency.",
+		category: "llm",
+		highlightKeyword: "LLM",
+		image: "/ai/llm1.png",
+		technologies: [
+			"Python 3.8+",
+			"PyTorch",
+			"DeepSpeed",
+			"PEFT",
+			"LoRA",
+			"FastAPI",
+			"Docker",
+			"NVIDIA A100 GPUs",
+		],
+		demoUrl: "",
+		githubUrl: "",
+		completionDate: "",
+		features: [
+			"Custom architecture with 7B parameters",
+			"Domain-specific pre-training",
+			"Multi-task learning capabilities",
+			"Efficient inference optimization",
+			"Automated model monitoring",
+			"Distributed training pipeline",
+			"Model quantization and optimization",
+			"Automated evaluation system",
+			"Real-time deployment pipeline",
+		],
+	},
+	{
+		id: "llm-3",
+		title: "LLM Fine-tuning Framework",
+		description:
+			"Created a comprehensive framework for fine-tuning large language models efficiently. The framework supports various fine-tuning methods, including LoRA, PEFT, and full fine-tuning, with automated optimization and monitoring capabilities.",
+		category: "llm",
+		highlightKeyword: "LLM",
+		image: "/ai/llm2.png",
+		technologies: [
+			"Python 3.8+",
+			"PyTorch",
+			"Transformers",
+			"DeepSpeed",
+			"PEFT",
+			"LoRA",
+			"FastAPI",
+			"Docker",
+			"AWS",
+		],
+		demoUrl: "",
+		githubUrl: "",
+		completionDate: "",
+		features: [
+			"Multiple fine-tuning methods",
+			"Automated hyperparameter optimization",
+			"Model performance monitoring",
+			"Distributed training support",
+			"Automated evaluation pipeline",
+		],
+	},
+];
 
 export const sectionInfo = {
-  "machine-learning": {
-    "title": "Machine Learning",
-    "description": "Explore my Machine Learning projects with a focus on scalability and performance."
-  },
-  "deep-learning": {
-    "title": "Deep Learning",
-    "description": "Explore my Deep Learning projects with a focus on scalability and performance."
-  },
-  "computer-vision": {
-    "title": "Computer Vision",
-    "description": "Discover my Computer Vision projects with a range of features and capabilities."
-  },
-  "nlp": {
-    "title": "NLP",
-    "description": "Check out my NLP projects with a focus on user experience and design."
-  },
-  "llm": {
-    "title": "LLM",
-    "description": "Explore my LLM projects with a range of features and capabilities."
-  },
-  "api": {
-    "title": "API Projects",
-    "description": "Discover my API projects with a focus on scalability and performance."
-  }
-
-}
+	"machine-learning": {
+		title: "Machine Learning",
+		description:
+			"Explore my Machine Learning projects with a focus on scalability and performance.",
+	},
+	"deep-learning": {
+		title: "Deep Learning",
+		description:
+			"Explore my Deep Learning projects with a focus on scalability and performance.",
+	},
+	"computer-vision": {
+		title: "Computer Vision",
+		description:
+			"Discover my Computer Vision projects with a range of features and capabilities.",
+	},
+	nlp: {
+		title: "NLP",
+		description:
+			"Check out my NLP projects with a focus on user experience and design.",
+	},
+	llm: {
+		title: "LLM",
+		description:
+			"Explore my LLM projects with a range of features and capabilities.",
+	},
+	api: {
+		title: "API Projects",
+		description:
+			"Discover my API projects with a focus on scalability and performance.",
+	},
+};
