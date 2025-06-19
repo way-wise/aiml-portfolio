@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils"
 
 const categories = [
   { id: "machine-learning", label: "Machine Learning" },
-  { id: "deep-learning", label: "Deep Learning" },
   { id: "computer-vision", label: "Computer Vision" },
   { id: "nlp", label: "NLP" },
   { id: "llm", label: "LLM" },
