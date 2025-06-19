@@ -596,8 +596,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: "AI-Powered Resume Screening & Ranking System",
     description:
       "Built an AI-driven resume parsing and ranking platform that uses semantic similarity to match candidate resumes with job descriptions, reducing manual screening time by 80%.",
-    category: "llm",
-    highlightKeyword: "Resume",
+    category: "nlp",
+    highlightKeyword: "NLP",
     image: "/nlp/nlp5.png",
     technologies: [
       "Python 3.9",
@@ -623,8 +623,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Contract Clause Extraction & Compliance Checker",
     description:
       "Developed a clause extraction and validation engine that automates legal contract review and ensures compliance with internal and regulatory standards.",
-    category: "llm",
-    highlightKeyword: "Clause",
+    category: "nlp",
+    highlightKeyword: "NLP",
     image: "/nlp/nlp6",
     technologies: [
       "Python 3.8",
@@ -649,8 +649,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Voice-to-Text Transcription and NLP Insight Engine",
     description:
       "Built a real-time voice-to-text and NLP engine for contact centers that transcribes calls, extracts insights, classifies intent, and generates call summaries for QA and training.",
-    category: "llm",
-    highlightKeyword: "Voice",
+    category: "nlp",
+    highlightKeyword: "NLP",
     image: "/nlp/nlp7.png",
     technologies: [
       "Python 3.8",
@@ -675,8 +675,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Named Entity Linking (NEL) for Scientific Documents",
     description:
       "Implemented an advanced NEL system that disambiguates and links scientific entities in academic texts to external knowledge bases like PubMed and WikiData, boosting document retrieval and researcher productivity.",
-    category: "llm",
-    highlightKeyword: "NEL",
+    category: "nlp",
+    highlightKeyword: "NLP",
     image: "/nlp/nlp8.png",
     technologies: ["Python 3.9", "SciBERT", "Faiss", "FastAPI", "Neo4j"],
     demoUrl: "",
