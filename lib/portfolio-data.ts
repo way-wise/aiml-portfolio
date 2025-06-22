@@ -126,9 +126,9 @@ export const portfolioItems: PortfolioItem[] = [
 
   {
     id: "ml-4",
-    title: "Predictive Maintenance System",
+    title: "AI detection dashboard report",
     description:
-      "Predictive Maintenance System for manage users and products and analytics.",
+      "AI detection dashboard report for manage users and products and analytics.",
     category: "machine-learning",
     highlightKeyword: "Machine Learning",
     image: "/ml/m-5.png",
@@ -146,9 +146,9 @@ export const portfolioItems: PortfolioItem[] = [
 
   {
     id: "ml-5",
-    title: "Advanced Sentiment Analysis System",
+    title: "Data analysis dashboard report",
     description:
-      "Revolutionized customer feedback analysis with multi-domain sentiment classification, sarcasm detection, and real-time analytics.",
+      "Data analysis dashboard report for manage users and products and analytics.",
     category: "machine-learning",
     highlightKeyword: "Machine Learning",
     image: "/ml/ml-6.png",
@@ -175,9 +175,9 @@ export const portfolioItems: PortfolioItem[] = [
 
   {
     id: "ml-6",
-    title: "Multilingual Text Summarization",
+    title: "Data extraction and summarization",
     description:
-      "Developed a multilingual summarization system supporting 5 languages with real-time abstractive and extractive capabilities.",
+      "Data extraction and summarization for manage users and products and analytics.",
     category: "machine-learning",
     highlightKeyword: "Natural Language Processing",
     image: "/ml/ml-7.png",
@@ -205,9 +205,9 @@ export const portfolioItems: PortfolioItem[] = [
 
   {
     id: "ml-7",
-    title: "Question Answering System",
+    title: "Real-time QA system",
     description:
-      "Built an intelligent educational QA system with BERT-based architecture, multi-hop reasoning, and real-time query responses.",
+      "Real-time QA system for manage users and products and analytics.",
     category: "machine-learning",
     highlightKeyword: "AI in Education",
     image: "/ml/ml-8.png",
@@ -232,26 +232,6 @@ export const portfolioItems: PortfolioItem[] = [
       "Batch question handling",
     ],
   },
-
-  // {
-  // 	id: "cv-1",
-  // 	title: "Computer Vision Face Login System",
-  // 	description:
-  // 		"Face Login System for manage users and products and analytics.",
-  // 	category: "computer-vision",
-  // 	highlightKeyword: "Computer Vision",
-  // 	image: "/ai/face_login System design.png",
-  // 	technologies: ["Python", "TensorFlow", "PostgreSQL"],
-  // 	demoUrl: "https://example.com/demo",
-  // 	githubUrl: "https://github.com/example/project",
-  // 	completionDate: "August 2023",
-  // 	features: [
-  // 		"Real-time message delivery",
-  // 		"User presence detection",
-  // 		"Message history storage",
-  // 		"End-to-end encryption",
-  // 	],
-  // },
   {
     id: "cv-2",
     title: "Real-time Object Detection System",
@@ -371,9 +351,9 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "cv-2",
-    title: "Real-time Object Detection System",
+    title: "Real-time Stock Market Prediction",
     description:
-      "Developed a cutting-edge real-time object detection system for autonomous vehicles that processes multiple camera feeds simultaneously with sub-millisecond latency. The system uses a custom YOLOv8 architecture optimized for edge deployment.",
+      "Real-time Stock Market Prediction for manage users and products and analytics.",
     category: "computer-vision",
     highlightKeyword: "Machine Learning",
     image: "/cv/cv-5.png",
@@ -400,9 +380,9 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "cv-3",
-    title: "Facial Emotion Recognition",
+    title: "Dashboard report for milions data",
     description:
-      "Built an advanced facial emotion recognition system that analyzes customer emotions in real-time across multiple retail locations. The system uses a custom CNN architecture with attention mechanisms for accurate emotion detection.",
+      "Dashboard report for milions data for manage users and products and analytics.",
     category: "computer-vision",
     highlightKeyword: "Machine Learning",
     image: "/cv/cv-6.png",
@@ -428,9 +408,9 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "cv-4",
-    title: "High-Performance Face Authentication System",
+    title: "AI generated chart system",
     description:
-      "Developed a revolutionary face authentication system capable of processing over 1 million face embeddings with sub-millisecond search time. The system uses a custom implementation of HNSWLib for ultra-fast similarity search.",
+      "AI generated chart system for manage users and products and analytics.",
     category: "computer-vision",
     highlightKeyword: "Machine Learning",
     image: "/cv/cv-7.png",
@@ -625,7 +605,7 @@ export const portfolioItems: PortfolioItem[] = [
       "Developed a clause extraction and validation engine that automates legal contract review and ensures compliance with internal and regulatory standards.",
     category: "nlp",
     highlightKeyword: "NLP",
-    image: "/nlp/nlp6",
+    image: "/nlp/nlp6.png",
     technologies: [
       "Python 3.8",
       "spaCy",
