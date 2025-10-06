@@ -82,29 +82,43 @@ export default function Home() {
 	return (
 		<main className="min-h-screen">
 			{/* Hero Section */}
-			<header className="flex items-center justify-between sticky top-0 bg-gray-50 z-50 text-center px-[100px]">
-				<div className="flex items-end gap-5">
-					<Image src="/wwt_logo.png" alt="Logo" width={250} height={200} />
-					<p className="text-sm -mb-0.5 font-bold text-gray-900">
-						A California Innovation Company
-					</p>
-				</div>
-				<div>
-					<h2 className="text-3xl text-orange-600 font-bold">
-						Our Dynamic Portfolio
-					</h2>
-					<a
-						href="mailto:support@waywisetech.com"
-						className="text-orange-600 font-bold text-sm mt-2 block"
-					>
-						support@waywisetech.com
-					</a>
-				</div>
-				<div className="max-w-4xl  py-5 ">
-					<CategoryNav
-						activeCategory={activeCategory}
-						onCategoryChange={handleCategoryChange}
-					/>
+			{/* Hero Section */}
+			<header className="sticky top-0 bg-gray-50 z-50 px-4 sm:px-8 lg:px-[100px] py-4">
+				<div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+					{/* Logo Section */}
+					<div className="flex flex-col sm:flex-row items-center sm:items-end gap-3 sm:gap-5">
+						<Image 
+							src="/wwt_logo.png" 
+							alt="Logo" 
+							width={250} 
+							height={200}
+							className="w-40 sm:w-52 lg:w-[250px] h-auto"
+						/>
+						<p className="text-xs sm:text-sm -mb-0.5 font-bold text-gray-900 text-center sm:text-left">
+							A California Innovation Company
+						</p>
+					</div>
+					
+					{/* Title Section */}
+					<div className="text-center">
+						<h2 className="text-2xl sm:text-3xl text-orange-600 font-bold">
+							Our Dynamic Portfolio
+						</h2>
+						<a
+							href="mailto:support@waywisetech.com"
+							className="text-orange-600 font-bold text-xs sm:text-sm mt-2 block hover:underline"
+						>
+							support@waywisetech.com
+						</a>
+					</div>
+					
+					{/* Navigation Section */}
+					<div className="w-full lg:w-auto lg:max-w-4xl py-2 lg:py-5">
+						<CategoryNav
+							activeCategory={activeCategory}
+							onCategoryChange={handleCategoryChange}
+						/>
+					</div>
 				</div>
 			</header>
 

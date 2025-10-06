@@ -7,6 +7,7 @@ const categories = [
   { id: "computer-vision", label: "Computer Vision" },
   { id: "nlp", label: "NLP" },
   { id: "llm", label: "LLM" },
+  { id: "llm", label: "Time Series Forecasting" },
 ]
 
 interface CategoryNavProps {
