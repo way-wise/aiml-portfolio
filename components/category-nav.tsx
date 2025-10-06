@@ -8,6 +8,8 @@ const categories = [
   { id: "nlp", label: "NLP" },
   { id: "llm", label: "LLM" },
   { id: "time-series", label: "Time Series Forecasting" },
+  { id: "deep-fake", label: "Deep Fake" },
+  { id: "custom-ai-application", label: "Custom AI Application" },
 ]
 
 interface CategoryNavProps {
