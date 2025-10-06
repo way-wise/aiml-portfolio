@@ -291,9 +291,9 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "cv-4",
-    title: "High-Performance Face Authentication System",
+    title: "Central AI Survellience System",
     description:
-      "Developed a revolutionary face authentication system capable of processing over 1 million face embeddings with sub-millisecond search time. The system uses a custom implementation of HNSWLib for ultra-fast similarity search.",
+      "On Premise or Remote Deployment of Central AI Survellience System on Live Cam Streams",
     category: "computer-vision",
     highlightKeyword: "Machine Learning",
     image: "/ml/high-performance.png",
