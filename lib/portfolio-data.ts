@@ -350,35 +350,6 @@ export const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    id: "cv-2",
-    title: "Real-time Stock Market Prediction",
-    description:
-      "Real-time Stock Market Prediction for manage users and products and analytics.",
-    category: "computer-vision",
-    highlightKeyword: "Machine Learning",
-    image: "/cv/cv-5.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "OpenCV",
-      "TensorRT",
-      "CUDA",
-      "FastAPI",
-      "Docker",
-      "NVIDIA Jetson",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2023",
-    features: [
-      "Real-time object detection (30+ FPS)",
-      "Multi-camera synchronization",
-      "Custom object classification (100+ classes)",
-      "Distance estimation and tracking",
-      "Weather condition adaptation",
-    ],
-  },
-  {
     id: "cv-3",
     title: "Dashboard report for milions data",
     description:
@@ -881,38 +852,97 @@ export const portfolioItems: PortfolioItem[] = [
       "Anti-pattern and code smell detection",
     ],
   },
+  {
+    id: "time-series-1",
+    title: "Forecasting Application for Fisheries Production",
+    description:
+      "Customized forecasting application for fisheries production with multimodal pipeline.",
+    category: "time-series",
+    highlightKeyword: "Fisheries",
+    image: "/time-series/time-series-1.png",
+    technologies: [
+      "Python 3.9",
+      "Prophet",
+      "SARIMA",
+      "XGBoost",
+      "FastAPI",
+      "Docker",
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      "PR review automation",
+      "Code generation from task descriptions",
+      "Multi-language support",
+      "Slack and GitHub integration",
+      "Anti-pattern and code smell detection",
+    ],
+  },
+  {
+    id: "time-series-2",
+    title: "Real-time Stock Market Prediction",
+    description:
+      "Real-time Stock Market Prediction for manage users and products and analytics.",
+    category: "time-series",
+    highlightKeyword: "Stock Analysis",
+    image: "/time-series/time-series-2.png",
+    technologies: [
+      "Python 3.9",
+      "ARIMA",
+      "CatBoost",
+      "LightGBM",
+      "Flask",
+      "Docker",
+      "Postgres",
+    ],
+    demoUrl: "#",
+    githubUrl: "#",
+    completionDate: "August 2024",
+    features: [
+       "Will disclose in request.",
+    ],
+  },
+  
 ];
 
 export const sectionInfo = {
   "machine-learning": {
     title: "Machine Learning",
     description:
-      "Explore my Machine Learning projects with a focus on scalability and performance.",
+      "Machine Learning projects with a focus on scalability and performance.",
   },
 
   "computer-vision": {
     title: "Computer Vision",
     description:
-      "Discover my Computer Vision projects with a range of features and capabilities.",
+      "Computer Vision projects with a range of features and capabilities.",
   },
   nlp: {
     title: "NLP",
     description:
-      "Check out my NLP projects with a focus on user experience and design.",
+      "Have a look on our NLP projects with a focus on user experience and design.",
   },
   llm: {
     title: "LLM",
     description:
-      "Explore my LLM projects with a range of features and capabilities.",
+      "Here are details of our LLM projects with large scale deployment and proof of concepts.",
   },
   "deep-learning": {
     title: "Deep Learning",
     description:
-      "Explore my Deep Learning projects with a focus on scalability and performance.",
+      "Our best expertise projects are from Deep Learning.",
   },
   api: {
     title: "API Projects",
     description:
-      "Discover my API projects with a focus on scalability and performance.",
+      "Discover the API projects with a focus on scalability and performance.",
+  },
+  "time-series": {
+    title: "Time Series Forecasting",
+    description:
+      "We have delivered highly efficient Time-Series Forecasting projects with high accuracy in prediction.",
   },
 };
+
+
