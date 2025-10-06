@@ -1,918 +1,339 @@
-export interface PortfolioItem {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  highlightKeyword?: string;
-  image: string;
-  technologies: string[];
-  demoUrl?: string;
-  githubUrl?: string;
-  completionDate?: string;
-  longDescription?: string;
-  features?: string[];
-  process?: string;
-}
+import React, { useState, useMemo } from 'react';
+import { Search, Github, ExternalLink, Calendar, Filter, X } from 'lucide-react';
 
-export const portfolioItems: PortfolioItem[] = [
-  {
-    id: "ml-0",
-    title: "Predictive Maintenance System",
-    description:
-      "Predictive Maintenance System for manage users and products and analytics.",
-    category: "machine-learning",
-    highlightKeyword: "Machine Learning",
-    image: "/ai/pd2.png",
-    technologies: ["Python", "TensorFlow", "PostgreSQL"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com/example/project",
-    completionDate: "August 2023",
-    features: [
-      "Real-time message delivery",
-      "User presence detection",
-      "Message history storage",
-      "End-to-end encryption",
-    ],
-  },
-
+// Portfolio data structure
+const portfolioItems = [
   {
     id: "ml-1",
     title: "Advanced Sentiment Analysis System",
-    description:
-      "Revolutionized customer feedback analysis with multi-domain sentiment classification, sarcasm detection, and real-time analytics.",
+    description: "Revolutionized customer feedback analysis with multi-domain sentiment classification, sarcasm detection, and real-time analytics.",
     category: "machine-learning",
     highlightKeyword: "Machine Learning",
     image: "/ai/ml1.png",
-    technologies: [
-      "Python",
-      "PyTorch",
-      "FastAPI",
-      "Hugging Face",
-      "PostgreSQL",
-      "Docker",
-    ],
-    demoUrl: "https://example.com/sentiment-demo",
-    githubUrl: "https://github.com/example/sentiment-analysis",
+    technologies: ["Python", "PyTorch", "FastAPI", "Hugging Face", "PostgreSQL", "Docker"],
     completionDate: "June 2023",
-    features: [
-      "Multi-domain sentiment classification (92% accuracy)",
-      "Sarcasm detection (85% accuracy)",
-      "Real-time processing pipeline",
-      "Aspect-based sentiment analysis",
-      "REST API integration",
-      "Custom visualization dashboard",
-    ],
-  },
-
-  {
-    id: "ml-2",
-    title: "Multilingual Text Summarization",
-    description:
-      "Developed a multilingual summarization system supporting 5 languages with real-time abstractive and extractive capabilities.",
-    category: "machine-learning",
-    highlightKeyword: "Natural Language Processing",
-    image: "/ai/ml2.png",
-    technologies: [
-      "Python",
-      "TensorFlow",
-      "spaCy",
-      "NLTK",
-      "Flask",
-      "MongoDB",
-      "Docker",
-    ],
-    demoUrl: "https://example.com/summarization-demo",
-    githubUrl: "https://github.com/example/multilingual-summarization",
-    completionDate: "May 2023",
-    features: [
-      "Cross-lingual summarization (5 languages)",
-      "Abstractive and extractive summarization",
-      "Language detection and preprocessing",
-      "Custom quality metrics and evaluation",
-      "Batch processing capability",
-      "API integration",
-    ],
-  },
-
-  {
-    id: "ml-3",
-    title: "Question Answering System",
-    description:
-      "Built an intelligent educational QA system with BERT-based architecture, multi-hop reasoning, and real-time query responses.",
-    category: "machine-learning",
-    highlightKeyword: "AI in Education",
-    image: "/ai/ml3.png",
-    technologies: [
-      "Python",
-      "PyTorch",
-      "FastAPI",
-      "React",
-      "Hugging Face",
-      "Elasticsearch",
-      "Docker",
-    ],
-    demoUrl: "https://example.com/qa-demo",
-    githubUrl: "https://github.com/example/qa-system",
-    completionDate: "April 2023",
-    features: [
-      "Context-aware question answering",
-      "Multi-hop reasoning",
-      "Source attribution and confidence scoring",
-      "Real-time student support",
-      "Interactive learning interface",
-      "Batch question handling",
-    ],
-  },
-
-  {
-    id: "ml-4",
-    title: "AI detection dashboard report",
-    description:
-      "AI detection dashboard report for manage users and products and analytics.",
-    category: "machine-learning",
-    highlightKeyword: "Machine Learning",
-    image: "/ml/m-5.png",
-    technologies: ["Python", "TensorFlow", "PostgreSQL"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com/example/project",
-    completionDate: "August 2023",
-    features: [
-      "Real-time message delivery",
-      "User presence detection",
-      "Message history storage",
-      "End-to-end encryption",
-    ],
-  },
-
-  {
-    id: "ml-5",
-    title: "Data analysis dashboard report",
-    description:
-      "Data analysis dashboard report for manage users and products and analytics.",
-    category: "machine-learning",
-    highlightKeyword: "Machine Learning",
-    image: "/ml/ml-6.png",
-    technologies: [
-      "Python",
-      "PyTorch",
-      "FastAPI",
-      "Hugging Face",
-      "PostgreSQL",
-      "Docker",
-    ],
-    demoUrl: "https://example.com/sentiment-demo",
-    githubUrl: "https://github.com/example/sentiment-analysis",
-    completionDate: "June 2023",
-    features: [
-      "Multi-domain sentiment classification (92% accuracy)",
-      "Sarcasm detection (85% accuracy)",
-      "Real-time processing pipeline",
-      "Aspect-based sentiment analysis",
-      "REST API integration",
-      "Custom visualization dashboard",
-    ],
-  },
-
-  {
-    id: "ml-6",
-    title: "Data extraction and summarization",
-    description:
-      "Data extraction and summarization for manage users and products and analytics.",
-    category: "machine-learning",
-    highlightKeyword: "Natural Language Processing",
-    image: "/ml/ml-7.png",
-    technologies: [
-      "Python",
-      "TensorFlow",
-      "spaCy",
-      "NLTK",
-      "Flask",
-      "MongoDB",
-      "Docker",
-    ],
-    demoUrl: "https://example.com/summarization-demo",
-    githubUrl: "https://github.com/example/multilingual-summarization",
-    completionDate: "May 2023",
-    features: [
-      "Cross-lingual summarization (5 languages)",
-      "Abstractive and extractive summarization",
-      "Language detection and preprocessing",
-      "Custom quality metrics and evaluation",
-      "Batch processing capability",
-      "API integration",
-    ],
-  },
-
-  {
-    id: "ml-7",
-    title: "Real-time QA system",
-    description:
-      "Real-time QA system for manage users and products and analytics.",
-    category: "machine-learning",
-    highlightKeyword: "AI in Education",
-    image: "/ml/ml-8.png",
-    technologies: [
-      "Python",
-      "PyTorch",
-      "FastAPI",
-      "React",
-      "Hugging Face",
-      "Elasticsearch",
-      "Docker",
-    ],
-    demoUrl: "https://example.com/qa-demo",
-    githubUrl: "https://github.com/example/qa-system",
-    completionDate: "April 2023",
-    features: [
-      "Context-aware question answering",
-      "Multi-hop reasoning",
-      "Source attribution and confidence scoring",
-      "Real-time student support",
-      "Interactive learning interface",
-      "Batch question handling",
-    ],
+    features: ["Multi-domain sentiment classification (92% accuracy)", "Sarcasm detection (85% accuracy)", "Real-time processing pipeline"],
   },
   {
     id: "cv-2",
     title: "Real-time Object Detection System",
-    description:
-      "Developed a cutting-edge real-time object detection system for autonomous vehicles that processes multiple camera feeds simultaneously with sub-millisecond latency. The system uses a custom YOLOv8 architecture optimized for edge deployment.",
+    description: "Developed a cutting-edge real-time object detection system for autonomous vehicles with sub-millisecond latency.",
     category: "computer-vision",
-    highlightKeyword: "Machine Learning",
+    highlightKeyword: "Computer Vision",
     image: "/ml/real-time.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "OpenCV",
-      "TensorRT",
-      "CUDA",
-      "FastAPI",
-      "Docker",
-      "NVIDIA Jetson",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
+    technologies: ["Python", "PyTorch", "OpenCV", "TensorRT", "CUDA", "FastAPI"],
     completionDate: "August 2023",
-    features: [
-      "Real-time object detection (30+ FPS)",
-      "Multi-camera synchronization",
-      "Custom object classification (100+ classes)",
-      "Distance estimation and tracking",
-      "Weather condition adaptation",
-    ],
+    features: ["Real-time object detection (30+ FPS)", "Multi-camera synchronization", "Custom object classification (100+ classes)"],
   },
-  {
-    id: "cv-3",
-    title: "Facial Emotion Recognition",
-    description:
-      "Built an advanced facial emotion recognition system that analyzes customer emotions in real-time across multiple retail locations. The system uses a custom CNN architecture with attention mechanisms for accurate emotion detection.",
-    category: "computer-vision",
-    highlightKeyword: "Machine Learning",
-    image: "/ml/facial-emotion.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "OpenCV",
-      "TensorRT",
-      "FastAPI",
-      "Docker",
-      "AWS",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2023",
-    features: [
-      "Real-time emotion detection (7 basic emotions)",
-      "Multi-person tracking",
-      "Age and gender estimation",
-      "Attention level analysis",
-      "Custom emotion intensity scoring",
-    ],
-  },
-  {
-    id: "cv-4",
-    title: "High-Performance Face Authentication System",
-    description:
-      "Developed a revolutionary face authentication system capable of processing over 1 million face embeddings with sub-millisecond search time. The system uses a custom implementation of HNSWLib for ultra-fast similarity search.",
-    category: "computer-vision",
-    highlightKeyword: "Machine Learning",
-    image: "/ml/high-performance.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "OpenCV",
-      "TensorRT",
-      "FastAPI",
-      "Docker",
-      "AWS",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2023",
-    features: [
-      "Sub-millisecond search time (0.50 ms)",
-      "Support for 1M+ face embeddings",
-      "Anti-spoofing measures",
-      "Real-time monitoring",
-      "Multi-factor authentication",
-    ],
-  },
-
-  {
-    id: "cv-5",
-    title: "Medical Image Segmentation",
-    description:
-      "Created an advanced medical image segmentation system for accurate organ and tumor detection in CT and MRI scans. The system uses a custom U-Net architecture with attention mechanisms for precise segmentation.",
-    category: "computer-vision",
-    highlightKeyword: "Machine Learning",
-    image: "/ml/medical-image.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "OpenCV",
-      "TensorRT",
-      "YOLOv8",
-      "CUDA",
-      "FastAPI",
-      "Docker",
-      "AWS",
-      "HNSWLib",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2023",
-    features: [
-      "Multi-organ segmentation",
-      "Tumor detection and classification",
-      "3D volume reconstruction",
-      "Automated report generation",
-      "Real-time processing",
-    ],
-  },
-  {
-    id: "cv-2",
-    title: "Real-time Stock Market Prediction",
-    description:
-      "Real-time Stock Market Prediction for manage users and products and analytics.",
-    category: "computer-vision",
-    highlightKeyword: "Machine Learning",
-    image: "/cv/cv-5.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "OpenCV",
-      "TensorRT",
-      "CUDA",
-      "FastAPI",
-      "Docker",
-      "NVIDIA Jetson",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2023",
-    features: [
-      "Real-time object detection (30+ FPS)",
-      "Multi-camera synchronization",
-      "Custom object classification (100+ classes)",
-      "Distance estimation and tracking",
-      "Weather condition adaptation",
-    ],
-  },
-  {
-    id: "cv-3",
-    title: "Dashboard report for milions data",
-    description:
-      "Dashboard report for milions data for manage users and products and analytics.",
-    category: "computer-vision",
-    highlightKeyword: "Machine Learning",
-    image: "/cv/cv-6.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "OpenCV",
-      "TensorRT",
-      "FastAPI",
-      "Docker",
-      "AWS",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2023",
-    features: [
-      "Real-time emotion detection (7 basic emotions)",
-      "Multi-person tracking",
-      "Age and gender estimation",
-      "Attention level analysis",
-      "Custom emotion intensity scoring",
-    ],
-  },
-  {
-    id: "cv-4",
-    title: "AI generated chart system",
-    description:
-      "AI generated chart system for manage users and products and analytics.",
-    category: "computer-vision",
-    highlightKeyword: "Machine Learning",
-    image: "/cv/cv-7.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "OpenCV",
-      "TensorRT",
-      "FastAPI",
-      "Docker",
-      "AWS",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2023",
-    features: [
-      "Sub-millisecond search time (0.50 ms)",
-      "Support for 1M+ face embeddings",
-      "Anti-spoofing measures",
-      "Real-time monitoring",
-      "Multi-factor authentication",
-    ],
-  },
-
-  {
-    id: "cv-5",
-    title: "Medical Image Segmentation",
-    description:
-      "Created an advanced medical image segmentation system for accurate organ and tumor detection in CT and MRI scans. The system uses a custom U-Net architecture with attention mechanisms for precise segmentation.",
-    category: "computer-vision",
-    highlightKeyword: "Machine Learning",
-    image: "/cv/cv-8.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "OpenCV",
-      "TensorRT",
-      "YOLOv8",
-      "CUDA",
-      "FastAPI",
-      "Docker",
-      "AWS",
-      "HNSWLib",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2023",
-    features: [
-      "Multi-organ segmentation",
-      "Tumor detection and classification",
-      "3D volume reconstruction",
-      "Automated report generation",
-      "Real-time processing",
-    ],
-  },
-
-  {
-    id: "nlp-1",
-    title: "Sentimail",
-    description:
-      "A smart NLP tool that automatically analyzes incoming customer support emails and classifies them into Positive, Negative, or Neutral sentiment.",
-    category: "nlp",
-    highlightKeyword: "NLP",
-    image: "/ai/nlp.png",
-    technologies: ["Python", "TensorFlow", "PostgreSQL"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com/example/project",
-    completionDate: "August 2023",
-    features: [
-      "Real-time message delivery",
-      "User presence detection",
-      "Message history storage",
-      "End-to-end encryption",
-    ],
-  },
-
   {
     id: "nlp-2",
     title: "Advanced Sentiment Analysis System",
-    description:
-      "A state-of-the-art sentiment analysis system processing 1M+ customer reviews daily with 95% accuracy. Features custom BERT architecture, real-time analysis, multi-language support, and emotion detection for improved customer service.",
+    description: "A state-of-the-art sentiment analysis system processing 1M+ customer reviews daily with 95% accuracy.",
     category: "nlp",
     highlightKeyword: "NLP",
     image: "/ai/nlp1.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "Hugging Face Transformers",
-      "FastAPI",
-      "Redis",
-      "Docker",
-      "AWS (SageMaker, EC2)",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Real-time sentiment analysis with 200ms response time",
-      "Multi-language support (English, Spanish, French, German)",
-      "Aspect-based sentiment analysis for detailed feedback",
-      "Custom emotion detection for 27 distinct emotions",
-      "Automated response generation for customer service",
-    ],
+    technologies: ["Python", "PyTorch", "Transformers", "FastAPI", "Redis", "Docker"],
+    completionDate: "May 2023",
+    features: ["Real-time sentiment analysis with 200ms response time", "Multi-language support", "Aspect-based sentiment analysis"],
   },
-  {
-    id: "nlp-3",
-    title: "Multilingual Text Summarization",
-    description:
-      "A powerful summarization system for generating concise, informative summaries across 8 languages. Supports abstractive/extractive modes, plagiarism detection, and custom length summaries for cross-platform use.",
-    category: "nlp",
-    highlightKeyword: "NLP",
-    image: "/ai/nlp2.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "Transformers",
-      "FastAPI",
-      "MongoDB",
-      "Docker",
-      "AWS",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Multi-language summarization (8 languages)",
-      "Abstractive and extractive summarization modes",
-      "Custom length control for different platforms",
-      "Key point extraction and highlighting",
-      "Plagiarism detection and prevention",
-    ],
-  },
-  {
-    id: "nlp-4",
-    title: "Question Answering System",
-    description:
-      "An advanced question answering system using retrieval-augmented generation and knowledge graph integration. Delivers fast, accurate answers across complex multi-document datasets.",
-    category: "nlp",
-    highlightKeyword: "NLP",
-    image: "/ai/nlp3.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "Transformers",
-      "Neo4j",
-      "FastAPI",
-      "Redis",
-      "Docker",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Context-aware answer generation",
-      "Multi-document reasoning",
-      "Custom knowledge graph integration",
-      "Real-time answer validation",
-      "User feedback learning system",
-    ],
-  },
-  {
-    id: "nlp-5",
-    title: "AI-Powered Resume Screening & Ranking System",
-    description:
-      "Built an AI-driven resume parsing and ranking platform that uses semantic similarity to match candidate resumes with job descriptions, reducing manual screening time by 80%.",
-    category: "nlp",
-    highlightKeyword: "NLP",
-    image: "/nlp/nlp5.png",
-    technologies: [
-      "Python 3.9",
-      "Hugging Face Transformers",
-      "spaCy",
-      "FastAPI",
-      "Streamlit",
-      "MongoDB",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Resume-to-structured-data parser",
-      "Skill, education, experience extraction",
-      "Semantic JD-resume similarity scoring",
-      "Automated candidate ranking",
-      "Bias mitigation and fairness audits",
-    ],
-  },
-  {
-    id: "nlp-6",
-    title: "Contract Clause Extraction & Compliance Checker",
-    description:
-      "Developed a clause extraction and validation engine that automates legal contract review and ensures compliance with internal and regulatory standards.",
-    category: "nlp",
-    highlightKeyword: "NLP",
-    image: "/nlp/nlp6.png",
-    technologies: [
-      "Python 3.8",
-      "spaCy",
-      "BiLSTM-CRF",
-      "FastAPI",
-      "PostgreSQL",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Clause classification and segmentation",
-      "Compliance validation engine",
-      "Automated risk scoring",
-      "Redline clause comparison",
-      "Document chunking for large-scale parsing",
-    ],
-  },
-  {
-    id: "nlp-7",
-    title: "Voice-to-Text Transcription and NLP Insight Engine",
-    description:
-      "Built a real-time voice-to-text and NLP engine for contact centers that transcribes calls, extracts insights, classifies intent, and generates call summaries for QA and training.",
-    category: "nlp",
-    highlightKeyword: "NLP",
-    image: "/nlp/nlp7.png",
-    technologies: [
-      "Python 3.8",
-      "Hugging Face Transformers",
-      "Google Cloud Speech",
-      "FastAPI",
-      "PostgreSQL",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Real-time transcription with diarization",
-      "Intent and sentiment analysis",
-      "Call summarization via TextRank + Transformers",
-      "QA flagging and performance analytics",
-      "REST API for call insights",
-    ],
-  },
-  {
-    id: "nlp-8",
-    title: "Named Entity Linking (NEL) for Scientific Documents",
-    description:
-      "Implemented an advanced NEL system that disambiguates and links scientific entities in academic texts to external knowledge bases like PubMed and WikiData, boosting document retrieval and researcher productivity.",
-    category: "nlp",
-    highlightKeyword: "NLP",
-    image: "/nlp/nlp8.png",
-    technologies: ["Python 3.9", "SciBERT", "Faiss", "FastAPI", "Neo4j"],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Scientific NER with contextual disambiguation",
-      "Knowledge base mapping (PubMed, WikiData)",
-      "Ontology-aware entity resolution",
-      "Entity embeddings via Wikipedia2Vec",
-      "Real-time document enrichment API",
-    ],
-  },
-
-  {
-    id: "llm-1",
-    title: "SmartLegalBot – AI Legal Assistant for Contract Review",
-    description:
-      "SmartLegalBot is an AI-powered assistant that helps users review legal contracts, highlight risky clauses, suggest simplified rewrites, and answer basic legal queries — all using a fine-tuned LLM trained on legal documents.",
-    category: "llm",
-    highlightKeyword: "LLM",
-    image: "/ai/llm.png",
-    technologies: ["Node.js", "Socket.io", "PostgreSQL"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com/example/project",
-    completionDate: "August 2023",
-    features: [
-      "Real-time message delivery",
-      "User presence detection",
-      "Message history storage",
-      "End-to-end encryption",
-    ],
-  },
-
   {
     id: "llm-2",
     title: "Custom LLM Development",
-    description:
-      "Developed a custom large language model from scratch, optimized for enterprise applications. The model was trained on domain-specific data and fine-tuned for various business use cases, achieving state-of-the-art performance while maintaining efficiency.",
+    description: "Developed a custom large language model from scratch, optimized for enterprise applications.",
     category: "llm",
     highlightKeyword: "LLM",
     image: "/ai/llm1.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "DeepSpeed",
-      "PEFT",
-      "LoRA",
-      "FastAPI",
-      "Docker",
-      "NVIDIA A100 GPUs",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Custom architecture with 7B parameters",
-      "Domain-specific pre-training",
-      "Multi-task learning capabilities",
-      "Efficient inference optimization",
-      "Automated model monitoring",
-      "Distributed training pipeline",
-      "Model quantization and optimization",
-      "Automated evaluation system",
-      "Real-time deployment pipeline",
-    ],
-  },
-  {
-    id: "llm-3",
-    title: "LLM Fine-tuning Framework",
-    description:
-      "Created a comprehensive framework for fine-tuning large language models efficiently. The framework supports various fine-tuning methods, including LoRA, PEFT, and full fine-tuning, with automated optimization and monitoring capabilities.",
-    category: "llm",
-    highlightKeyword: "LLM",
-    image: "llm/l3.png",
-    technologies: [
-      "Python 3.8+",
-      "PyTorch",
-      "Transformers",
-      "DeepSpeed",
-      "PEFT",
-      "LoRA",
-      "FastAPI",
-      "Docker",
-      "AWS",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Multiple fine-tuning methods",
-      "Automated hyperparameter optimization",
-      "Model performance monitoring",
-      "Distributed training support",
-      "Automated evaluation pipeline",
-    ],
-  },
-  {
-    id: "llm-4",
-    title: "RAG-Based Enterprise Knowledge Assistant",
-    description:
-      "Built a context-aware RAG assistant to answer internal employee queries by grounding LLM responses in enterprise documents, policies, and knowledge bases.",
-    category: "llm",
-    highlightKeyword: "RAG",
-    image: "llm/l4.png",
-    technologies: [
-      "Python 3.9",
-      "Hugging Face Transformers",
-      "LangChain",
-      "FAISS",
-      "Pinecone",
-      "FastAPI",
-      "Docker",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Hybrid vector & keyword search (BM25 + FAISS)",
-      "Source-linked, context-aware answers",
-      "Slack/MS Teams chat integration",
-      "Live document re-indexing",
-    ],
-  },
-  {
-    id: "llm-5",
-    title: "Multilingual LLM Chatbot for Customer Support",
-    description:
-      "Created a real-time multilingual LLM chatbot capable of handling support queries in 15+ languages with sentiment-aware response tuning.",
-    category: "llm",
-    highlightKeyword: "Multilingual",
-    image: "llm/l5.png",
-    technologies: [
-      "Python 3.8",
-      "PyTorch",
-      "MarianMT",
-      "Redis",
-      "FastAPI",
-      "Kubernetes",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Multilingual LLM responses",
-      "Human hand-off mechanism",
-      "Product/order FAQ integration",
-      "Context memory per user",
-      "Sentiment-aware tone modulation",
-    ],
-  },
-  {
-    id: "llm-6",
-    title: "LLM-based Content Generation Engine",
-    description:
-      "Engineered a scalable content generation pipeline for SEO blogs, product descriptions, and brand copy using GPT-J and T5 models.",
-    category: "llm",
-    highlightKeyword: "Content",
-    image: "/llm/l6.png",
-    technologies: [
-      "Python 3.8",
-      "Hugging Face Transformers",
-      "GPT-J",
-      "T5",
-      "Gradio",
-      "Docker",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Brand tone and style customization",
-      "SEO keyword-aware prompt generation",
-      "Bulk CSV/Excel support",
-      "Plagiarism check integration",
-      "Real-time editing and feedback",
-    ],
-  },
-  {
-    id: "llm-7",
-    title: "Autonomous Research Agent using LLMs",
-    description:
-      "Developed an autonomous LLM agent for literature reviews with semantic paper search, PDF summarization, and research graph generation.",
-    category: "llm",
-    highlightKeyword: "Research",
-    image: "/llm/l7.png",
-    technologies: ["Python 3.10", "LangChain", "GPT API", "PyMuPDF", "Neo4j"],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "Semantic search across academic papers",
-      "PDF auto-summary pipeline",
-      "Research graph creation (Neo4j)",
-      "Clustered citation mapping",
-      "Autonomous topic synthesis",
-    ],
-  },
-  {
-    id: "llm-8",
-    title: "LLM-Powered Code Generation & Review Assistant",
-    description:
-      "Built an AI coding assistant that generates boilerplate code, reviews PRs, and flags anti-patterns with LLM-powered insights.",
-    category: "llm",
-    highlightKeyword: "Code",
-    image: "/llm/l8.png",
-    technologies: [
-      "Python 3.9",
-      "CodeLLaMA",
-      "GitHub API",
-      "FastAPI",
-      "Docker",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      "PR review automation",
-      "Code generation from task descriptions",
-      "Multi-language support",
-      "Slack and GitHub integration",
-      "Anti-pattern and code smell detection",
-    ],
+    technologies: ["Python", "PyTorch", "DeepSpeed", "PEFT", "LoRA", "FastAPI"],
+    completionDate: "April 2023",
+    features: ["Custom architecture with 7B parameters", "Domain-specific pre-training", "Multi-task learning capabilities"],
   },
 ];
 
-export const sectionInfo = {
-  "machine-learning": {
-    title: "Machine Learning",
-    description:
-      "Explore my Machine Learning projects with a focus on scalability and performance.",
-  },
-
-  "computer-vision": {
-    title: "Computer Vision",
-    description:
-      "Discover my Computer Vision projects with a range of features and capabilities.",
-  },
-  nlp: {
-    title: "NLP",
-    description:
-      "Check out my NLP projects with a focus on user experience and design.",
-  },
-  llm: {
-    title: "LLM",
-    description:
-      "Explore my LLM projects with a range of features and capabilities.",
-  },
-  "deep-learning": {
-    title: "Deep Learning",
-    description:
-      "Explore my Deep Learning projects with a focus on scalability and performance.",
-  },
-  api: {
-    title: "API Projects",
-    description:
-      "Discover my API projects with a focus on scalability and performance.",
-  },
+const categories = {
+  all: { name: "All Projects", color: "from-purple-500 to-pink-500" },
+  "machine-learning": { name: "Machine Learning", color: "from-blue-500 to-cyan-500" },
+  "computer-vision": { name: "Computer Vision", color: "from-green-500 to-emerald-500" },
+  nlp: { name: "NLP", color: "from-orange-500 to-red-500" },
+  llm: { name: "LLM", color: "from-indigo-500 to-purple-500" },
 };
+
+export default function InteractivePortfolio() {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  const filteredProjects = useMemo(() => {
+    return portfolioItems.filter(item => {
+      const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
+      const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           item.technologies.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()));
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
+
+  const categoryStats = useMemo(() => {
+    const stats = {};
+    portfolioItems.forEach(item => {
+      stats[item.category] = (stats[item.category] || 0) + 1;
+    });
+    return stats;
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+      {/* Animated Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl top-0 -left-48 animate-pulse"></div>
+        <div className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl bottom-0 -right-48 animate-pulse delay-1000"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-4">
+          <h1 className="text-6xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-fade-in">
+            AI Portfolio Showcase
+          </h1>
+          <p className="text-slate-400 text-xl max-w-2xl mx-auto">
+            Exploring the frontiers of artificial intelligence through innovative projects
+          </p>
+        </div>
+
+        {/* Search & Filter Section */}
+        <div className="mb-12 space-y-6">
+          {/* Search Bar */}
+          <div className="relative max-w-2xl mx-auto">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+            <input
+              type="text"
+              placeholder="Search projects, technologies, or keywords..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl pl-12 pr-4 py-4 text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            )}
+          </div>
+
+          {/* Category Filters */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {Object.entries(categories).map(([key, { name, color }]) => (
+              <button
+                key={key}
+                onClick={() => setSelectedCategory(key)}
+                className={`px-6 py-3 rounded-xl font-medium transition-all transform hover:scale-105 ${
+                  selectedCategory === key
+                    ? `bg-gradient-to-r ${color} text-white shadow-lg shadow-purple-500/30`
+                    : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 border border-slate-700'
+                }`}
+              >
+                {name}
+                {key !== 'all' && categoryStats[key] && (
+                  <span className="ml-2 px-2 py-0.5 bg-white/20 rounded-full text-xs">
+                    {categoryStats[key]}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Results Count */}
+        <div className="text-center mb-8">
+          <p className="text-slate-400">
+            Showing <span className="text-purple-400 font-semibold">{filteredProjects.length}</span> projects
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              onMouseEnter={() => setHoveredCard(project.id)}
+              onMouseLeave={() => setHoveredCard(null)}
+              onClick={() => setSelectedProject(project)}
+              className="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 cursor-pointer"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {/* Image Container */}
+              <div className="relative h-48 bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${categories[project.category]?.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                
+                {/* Category Badge */}
+                <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${categories[project.category]?.color} shadow-lg`}>
+                  {project.highlightKeyword}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 space-y-4">
+                <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all">
+                  {project.title}
+                </h3>
+                
+                <p className="text-slate-400 text-sm line-clamp-3">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.slice(0, 3).map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-lg border border-slate-700"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-lg">
+                      +{project.technologies.length - 3} more
+                    </span>
+                  )}
+                </div>
+
+                {/* Footer */}
+                <div className="flex items-center justify-between pt-4 border-t border-slate-700">
+                  <div className="flex items-center gap-2 text-slate-400 text-sm">
+                    <Calendar className="w-4 h-4" />
+                    {project.completionDate}
+                  </div>
+                  
+                  <div className="flex gap-2">
+                    <button className="p-2 bg-slate-800 hover:bg-purple-500 rounded-lg transition-colors group/btn">
+                      <Github className="w-4 h-4 text-slate-400 group-hover/btn:text-white transition-colors" />
+                    </button>
+                    <button className="p-2 bg-slate-800 hover:bg-purple-500 rounded-lg transition-colors group/btn">
+                      <ExternalLink className="w-4 h-4 text-slate-400 group-hover/btn:text-white transition-colors" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hover Effect Overlay */}
+              {hoveredCard === project.id && (
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-500/10 to-transparent pointer-events-none"></div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Empty State */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-20">
+            <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full flex items-center justify-center">
+              <Filter className="w-12 h-12 text-purple-400" />
+            </div>
+            <h3 className="text-2xl font-bold text-slate-300 mb-2">No projects found</h3>
+            <p className="text-slate-400 mb-6">Try adjusting your search or filters</p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedCategory('all');
+              }}
+              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all"
+            >
+              Reset Filters
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Project Detail Modal */}
+      {selectedProject && (
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+            className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-8 space-y-6">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    {selectedProject.title}
+                  </h2>
+                  <p className={`mt-2 inline-block px-4 py-1 rounded-full text-sm font-semibold bg-gradient-to-r ${categories[selectedProject.category]?.color}`}>
+                    {selectedProject.highlightKeyword}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="p-2 hover:bg-slate-700 rounded-lg transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              <p className="text-slate-300 text-lg">{selectedProject.description}</p>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-purple-400">Key Features</h3>
+                <ul className="space-y-2">
+                  {selectedProject.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2"></span>
+                      <span className="text-slate-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-purple-400">Technologies</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.technologies.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-4 py-2 bg-slate-700 text-slate-200 rounded-lg border border-slate-600"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex gap-4 pt-6">
+                <button className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all">
+                  <Github className="w-5 h-5" />
+                  View Code
+                </button>
+                <button className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-xl font-medium transition-all">
+                  <ExternalLink className="w-5 h-5" />
+                  Live Demo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out;
+        }
+      `}</style>
+    </div>
+  );
+}
