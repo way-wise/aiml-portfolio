@@ -237,7 +237,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Real-time Object Detection System",
     description:
       "Developed a cutting-edge real-time object detection system for autonomous vehicles that processes multiple camera feeds simultaneously with sub-millisecond latency. The system uses a custom YOLOv8 architecture optimized for edge deployment.",
-    category: "computer-vision",
+    category: "deep-learning",
     highlightKeyword: "Machine Learning",
     image: "/ml/real-time.png",
     technologies: [
@@ -262,11 +262,11 @@ export const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    id: "cv-3",
+    id: "cv-13",
     title: "Facial Emotion Recognition",
     description:
       "Built an advanced facial emotion recognition system that analyzes customer emotions in real-time across multiple retail locations. The system uses a custom CNN architecture with attention mechanisms for accurate emotion detection.",
-    category: "computer-vision",
+    category: "deep-learning",
     highlightKeyword: "Machine Learning",
     image: "/ml/facial-emotion.png",
     technologies: [
@@ -294,7 +294,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Central AI Survellience System",
     description:
       "On Premise or Remote Deployment of Central AI Survellience System on Live Cam Streams",
-    category: "computer-vision",
+    category: "deep-learning",
     highlightKeyword: "Machine Learning",
     image: "/ml/high-performance.png",
     technologies: [
@@ -323,7 +323,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Medical Image Segmentation",
     description:
       "Created an advanced medical image segmentation system for accurate organ and tumor detection in CT and MRI scans. The system uses a custom U-Net architecture with attention mechanisms for precise segmentation.",
-    category: "computer-vision",
+    category: "deep-learning",
     highlightKeyword: "Machine Learning",
     image: "/ml/medical-image.png",
     technologies: [
@@ -354,7 +354,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Dashboard report for milions data",
     description:
       "Dashboard report for milions data for manage users and products and analytics.",
-    category: "computer-vision",
+    category: "deep-learning",
     highlightKeyword: "Machine Learning",
     image: "/cv/cv-6.png",
     technologies: [
@@ -378,11 +378,11 @@ export const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    id: "cv-4",
+    id: "cv-10",
     title: "AI generated chart system",
     description:
       "AI generated chart system for manage users and products and analytics.",
-    category: "computer-vision",
+    category: "deep-learning",
     highlightKeyword: "Machine Learning",
     image: "/cv/cv-7.png",
     technologies: [
@@ -407,11 +407,11 @@ export const portfolioItems: PortfolioItem[] = [
   },
 
   {
-    id: "cv-5",
+    id: "cv-6",
     title: "Medical Image Segmentation",
     description:
       "Created an advanced medical image segmentation system for accurate organ and tumor detection in CT and MRI scans. The system uses a custom U-Net architecture with attention mechanisms for precise segmentation.",
-    category: "computer-vision",
+    category: "deep-learning",
     highlightKeyword: "Machine Learning",
     image: "/cv/cv-8.png",
     technologies: [
@@ -856,10 +856,10 @@ export const portfolioItems: PortfolioItem[] = [
     id: "time-series-1",
     title: "Forecasting Application for Fisheries Production",
     description:
-      "Customized forecasting application for fisheries production with multimodal pipeline.",
+      "Prediction of fisheries production to provide insights on fisheries economy.",
     category: "time-series",
-    highlightKeyword: "Fisheries",
-    image: "/time-series/time-series-1.png",
+    highlightKeyword: "Industry: Fisheries, Agriculture",
+    image: "/time-series/time-series-1.jpeg",
     technologies: [
       "Python 3.9",
       "Prophet",
@@ -872,20 +872,16 @@ export const portfolioItems: PortfolioItem[] = [
     githubUrl: "",
     completionDate: "",
     features: [
-      "PR review automation",
-      "Code generation from task descriptions",
-      "Multi-language support",
-      "Slack and GitHub integration",
-      "Anti-pattern and code smell detection",
+      ""
     ],
   },
   {
     id: "time-series-2",
     title: "Real-time Stock Market Prediction",
     description:
-      "Real-time Stock Market Prediction for manage users and products and analytics.",
+      "Real-time stock market Prediction for managing stock profile.",
     category: "time-series",
-    highlightKeyword: "Stock Analysis",
+    highlightKeyword: "Industry: Stock Market, Trading",
     image: "/time-series/time-series-2.png",
     technologies: [
       "Python 3.9",
@@ -901,6 +897,120 @@ export const portfolioItems: PortfolioItem[] = [
     completionDate: "August 2024",
     features: [
        "Will disclose in request.",
+    ],
+  },
+  {
+    id: "time-series-3",
+    title: "Predictive Maintenance Platform",
+    description:
+      "Uses time series sensor data from critical machines to forecast RUL.",
+    category: "time-series",
+    highlightKeyword: "Industry: Manufacturing, Energy, IIoT",
+    image: "/time-series/time-series-3.jpeg",
+    technologies: [
+      "Python 3.10",
+      "Pandas",
+      "Scikit-learn",
+      "MLflow",
+      "LSTMs",
+      "GRUs",
+      "TensorFlow",
+      "PyTorch",
+      "Gradient Boosting",
+      "Grafana",
+      "Django",
+      "React",
+      "Amazon S3"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
+   {
+    id: "time-series-4",
+    title: "Automated Inventory Demand Predictor",
+    description:
+      "Predicts exactly how much product customers will buy at different times and locations.",
+    category: "time-series",
+    highlightKeyword: "Retail, E-commerce, Supply Chain Management",
+    image: "/time-series/time-series-4.jpeg",
+    technologies: [
+      "FastAPI",
+      "Custom Dashboard with Streamlit",
+      "Custom service integrated with email",
+      "AWS Lambda",
+      "AWS Step Functions",
+      "Docker",
+      "MLflow",
+      "Exponential Smoothing",
+      "Auto-ARIMA",
+      "Prophetfrom Meta",
+      "CatBoost",
+      "TimescaleDB",
+      "Warehouse Management Systems"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      "PR review automation",
+      "Code generation from task descriptions",
+      "Multi-language support",
+      "Slack and GitHub integration",
+      "Anti-pattern and code smell detection",
+    ],
+  },
+   {
+    id: "reinforcement-learning-1",
+    title: "Dynamic Inventory and Production Planning for a Supply Chain",
+    description:
+      "This project is a Multi Agent Reinforcement Learning (MARL) system designed to automatically optimize complex supply chains. It uses cooperating AI agents, a Production Agent at the factory and Distribution Agents at the warehouses, to make real time decisions on what to produce and where to ship it. The goal is to minimize total operational costs production holding and transport while maximizing customer fulfillment avoiding stockouts under volatile demand.",
+    category: "reinforcement-learning",
+    highlightKeyword: "Multi Agent Reinforcement Learning, Supply Chain Management",
+    image: "/rl/rl-1.jpeg",
+    technologies: [
+      "PyTorch",
+      "Stable Baselines3",
+      "Pandas",
+      "Seaborn",
+      "AWS Step Functions",
+      "Docker",
+      "Flask",
+      "Typescript"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
+  {
+    id: "reinforcement-learning-2",
+    title: "Adaptive Process Control for Chemical/Manufacturing Plants",
+    description:
+      "This project develops a Reinforcement Learning RL agent to serve as a self learning advanced controller for complex industrial equipment. Unlike rigid traditional controllers, the RL agent dynamically adjusts system parameters like temperature and flow in real time. The agent is trained to maximize product quality and yield while minimizing energy consumption and strictly adhering to all safety constraints. The final deliverable is a high fidelity simulation demonstrating the RL agent's superior efficiency and throughput compared to a benchmark control system.",
+    category: "reinforcement-learning",
+    highlightKeyword: "Adaptive Process Control, Process Optimization, Maximizing Yield",
+    image: "/rl/rl-2.jpg",
+    technologies: [
+      "PyTorch",
+      "Ray RLlib",
+      "Python",
+      "Plotly",
+      "Azure DevOps",
+      "Docker",
+      "NumPy",
+      "FastAPI"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
     ],
   },
   

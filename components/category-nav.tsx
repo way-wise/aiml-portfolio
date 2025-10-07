@@ -3,13 +3,12 @@
 import { cn } from "@/lib/utils"
 
 const categories = [
-  { id: "machine-learning", label: "Machine Learning" },
-  { id: "computer-vision", label: "Computer Vision" },
-  { id: "nlp", label: "NLP" },
-  { id: "llm", label: "LLM" },
+  { id: "deep-learning", label: "Deep Learning" },
   { id: "time-series", label: "Time Series Forecasting" },
-  { id: "deep-fake", label: "Deep Fake" },
-  { id: "custom-ai-application", label: "Custom AI Application" },
+  { id: "llm", label: "Multimodal Learning" },
+  { id: "machine-learning", label: "Machine Learning" },
+  { id: "reinforcement-learning", label: "Reinforcement Learning" },
+  { id: "nlp", label: "Natural Language Processing" },
 ]
 
 interface CategoryNavProps {

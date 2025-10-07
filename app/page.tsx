@@ -1,6 +1,5 @@
 "use client";
-
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowDown, ExternalLink, Github } from "lucide-react";
 import CategoryNav from "@/components/category-nav";
@@ -12,175 +11,128 @@ import { sectionInfo } from "@/lib/portfolio-data";
 type SectionKey = keyof typeof sectionInfo;
 
 export default function Home() {
-	const searchParams = useSearchParams();
-	const [activeCategory, setActiveCategory] = useState<string>("backend");
-	const [highlightedIds, setHighlightedIds] = useState<string[]>([]);
-	const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({
-		backend: null,
-		mobile: null,
-		frontend: null,
-		nocode: null,
-		api: null,
-	});
+  const searchParams = useSearchParams();
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [highlightedIds, setHighlightedIds] = useState<string[]>([]);
 
-	// Handle URL parameters for highlighting specific cards
-	useEffect(() => {
-		const idParam = searchParams.get("id");
-		if (idParam) {
-			// Support multiple IDs separated by commas
-			const ids = idParam.split(",");
-			setHighlightedIds(ids);
 
-			// If there's at least one ID, set the active category to the first highlighted item's category
-			if (ids.length > 0) {
-				const firstItem = portfolioItems.find((item) => item.id === ids[0]);
-				if (firstItem) {
-					setActiveCategory(firstItem.category);
 
-					// Use a ref to track if we've already scrolled to avoid infinite loops
-					const timer = setTimeout(() => {
-						if (sectionRefs.current[firstItem.category]) {
-							sectionRefs.current[firstItem.category]?.scrollIntoView({
-								behavior: "smooth",
-							});
-						}
-					}, 500);
+  // Group portfolio items by category
+  const itemsByCategory = portfolioItems.reduce((acc, item) => {
+    if (!acc[item.category]) {
+      acc[item.category] = [];
+    }
+    acc[item.category].push(item);
+    return acc;
+  }, {} as Record<string, typeof portfolioItems>);
+//  console.log(itemsByCategory)
+  // Get unique categories
+  const categories = Object.keys(itemsByCategory);
 
-					return () => clearTimeout(timer);
-				}
-			}
-		}
-	}, [searchParams]); // Only depend on searchParams
+  // Handle URL parameters for highlighting specific cards
+  useEffect(() => {
+    const idParam = searchParams.get("id");
+    if (idParam) {
+      const ids = idParam.split(",");
+      setHighlightedIds(ids);
+    }
+  }, [searchParams]);
 
-	const scrollToCategory = (category: string) => {
-		// Don't update state here, just scroll
-		if (sectionRefs.current[category]) {
-			sectionRefs.current[category]?.scrollIntoView({ behavior: "smooth" });
-		}
-	};
+  // Toggle category visibility
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+  };
 
-	const handleCategoryChange = (category: string) => {
-		setActiveCategory(category);
-		// Use setTimeout to ensure the state update completes before scrolling
-		setTimeout(() => {
-			scrollToCategory(category);
-		}, 0);
-	};
+  return (
+    <main className="min-h-screen bg-white">
+      {/* Thin Header */}
+      <header className="sticky top-0 bg-white z-50 px-3 sm:px-6 md:px-8 lg:px-[100px] py-2 sm:py-3 border-b border-gray-200">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
+          {/* Logo */}
+          <div className="flex items-center flex-shrink-0">
+            <Image
+              src="/wwt_logo.png"
+              alt="Logo"
+              width={180}
+              height={60}
+              className="w-24 sm:w-32 md:w-40 lg:w-[180px] h-auto"
+            />
+          </div>
+          {/* Title and Email - Upper Right */}
+          <div className="text-right flex-shrink min-w-0">
+            <h1 className="text-sm sm:text-xl md:text-2xl text-orange-600 font-bold leading-tight">
+              Our Dynamic Portfolio
+            </h1>
+            <a
+              href="mailto:support@waywisetech.com"
+              className="text-orange-600 text-[10px] sm:text-xs md:text-sm mt-0.5 sm:mt-1 block hover:underline truncate"
+            >
+              support@waywisetech.com
+            </a>
+          </div>
+        </div>
+      </header>
 
-	// Group portfolio items by category
-	const itemsByCategory = portfolioItems.reduce((acc, item) => {
-		if (!acc[item.category]) {
-			acc[item.category] = [];
-		}
-		acc[item.category].push(item);
-		return acc;
-	}, {} as Record<string, typeof portfolioItems>);
+      {/* Category Navigation - Centered Below Header */}
+      <div className="bg-white py-3 sm:py-4 md:py-6 px-2 sm:px-4 border-b-2 border-gray-100 sticky top-[56px] sm:top-[64px] md:top-[72px] z-40 overflow-x-auto scrollbar-hide">
+        <div className="flex justify-center min-w-max mx-auto px-2">
+          <CategoryNav
+            activeCategory={activeCategory}
+            onCategoryChange={handleCategoryChange}
+            categories={["all", ...categories]}
+          />
+        </div>
+      </div>
 
-	// Get unique categories
-	const categories = Object.keys(itemsByCategory);
+      {/* Portfolio Cards List */}
+      <div className="py-12 sm:py-16 md:py-24 lg:py-[120px] px-3 sm:px-4 md:px-6 bg-white">
+        <div className="px-2 sm:px-4 md:px-8 lg:px-16 max-w-[1600px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 justify-items-center">
+            {(activeCategory === "all"
+              ? portfolioItems
+              : itemsByCategory[activeCategory] || []
+            ).map((item) => (
+              <div
+                key={item.id}
+                className="w-full max-w-sm transition-all duration-500 opacity-100 translate-y-0"
+              >
+                <PortfolioCard
+                  item={item}
+                  isHighlighted={highlightedIds.includes(item.id)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-	return (
-		<main className="min-h-screen">
-			{/* Hero Section */}
-			{/* Hero Section */}
-			<header className="sticky top-0 bg-gray-50 z-50 px-4 sm:px-8 lg:px-[100px] py-4">
-				<div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-					{/* Logo Section */}
-					<div className="flex flex-col sm:flex-row items-center sm:items-end gap-3 sm:gap-5">
-						<Image 
-							src="/wwt_logo.png" 
-							alt="Logo" 
-							width={250} 
-							height={200}
-							className="w-40 sm:w-52 lg:w-[250px] h-auto"
-						/>
-						<p className="text-xs sm:text-sm -mb-0.5 font-bold text-gray-900 text-center sm:text-left">
-							A California Innovation Company
-						</p>
-					</div>
-					
-					{/* Title Section */}
-					<div className="text-center">
-						<h2 className="text-2xl sm:text-3xl text-orange-600 font-bold">
-							Our Dynamic Portfolio
-						</h2>
-						<a
-							href="mailto:support@waywisetech.com"
-							className="text-orange-600 font-bold text-xs sm:text-sm mt-2 block hover:underline"
-						>
-							support@waywisetech.com
-						</a>
-					</div>
-					
-					{/* Navigation Section */}
-					<div className="w-full lg:w-auto lg:max-w-4xl py-2 lg:py-5">
-						<CategoryNav
-							activeCategory={activeCategory}
-							onCategoryChange={handleCategoryChange}
-						/>
-					</div>
-				</div>
-			</header>
-
-			{/* Portfolio Sections - One for each category */}
-			{categories.map((category) => (
-				<section
-					key={category}
-					ref={(el) => {
-						sectionRefs.current[category] = el as HTMLDivElement | null;
-					}}
-					className="py-[120px] px-4 bg-white border-b-4 border-gray-200 last:border-0"
-					id={`section-${category}`}
-				>
-					<div className="px-16">
-						<div className="flex flex-col items-center gap-1 pb-[70px]">
-							<h2 className="text-5xl font-semibold text-center capitalize">
-								{sectionInfo[category as SectionKey]?.title ||
-									`${category} Projects`}
-							</h2>
-							<p className="text-2xl text-gray-300">
-								{sectionInfo[category as SectionKey]?.description ||
-									"Explore my work in this category."}
-							</p>
-						</div>
-						<div className="flex flex-wrap justify-center gap-8">
-							{itemsByCategory[category].map((item, index) => (
-								<PortfolioCard
-									key={item.id + index}
-									item={item}
-									isHighlighted={highlightedIds.includes(item.id)}
-								/>
-							))}
-						</div>
-					</div>
-				</section>
-			))}
-
-			{/* Footer */}
-			<footer className="bg-gray-900 text-white py-12 px-4">
-				<div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-					<div className="mb-6 md:mb-0">
-						<h3 className="text-xl font-bold">Our Portfolio</h3>
-						<p className="text-gray-400 mt-2">
-							Showcasing my development journey
-						</p>
-					</div>
-					<div className="flex space-x-6">
-						<a
-							href="https://github.com"
-							className="hover:text-gray-300 transition-colors"
-						>
-							<Github size={24} />
-						</a>
-						<a
-							href="https://linkedin.com"
-							className="hover:text-gray-300 transition-colors"
-						>
-							<ExternalLink size={24} />
-						</a>
-					</div>
-				</div>
-			</footer>
-		</main>
-	);
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-8 sm:py-10 md:py-12 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="mb-4 md:mb-0 text-center md:text-left">
+            <h3 className="text-lg sm:text-xl font-bold">Our Portfolio</h3>
+            <p className="text-gray-400 mt-1 sm:mt-2 text-sm sm:text-base">
+              Showcasing my development journey
+            </p>
+          </div>
+          <div className="flex space-x-4 sm:space-x-6">
+            <a
+              href="https://github.com"
+              className="hover:text-gray-300 transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={20} className="sm:w-6 sm:h-6" />
+            </a>
+            <a
+              href="https://linkedin.com"
+              className="hover:text-gray-300 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <ExternalLink size={20} className="sm:w-6 sm:h-6" />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
 }
