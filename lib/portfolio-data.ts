@@ -351,7 +351,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "cv-3",
-    title: "Dashboard report for milions data",
+    title: "Dashboard Report for Milions of Data",
     description:
       "Dashboard report for milions data for manage users and products and analytics.",
     category: "deep-learning",
@@ -370,16 +370,12 @@ export const portfolioItems: PortfolioItem[] = [
     githubUrl: "#",
     completionDate: "August 2023",
     features: [
-      "Real-time emotion detection (7 basic emotions)",
-      "Multi-person tracking",
-      "Age and gender estimation",
-      "Attention level analysis",
-      "Custom emotion intensity scoring",
+      "",
     ],
   },
   {
     id: "cv-10",
-    title: "AI generated chart system",
+    title: "AI Generated Chart System",
     description:
       "AI generated chart system for manage users and products and analytics.",
     category: "deep-learning",
@@ -405,7 +401,66 @@ export const portfolioItems: PortfolioItem[] = [
       "Multi-factor authentication",
     ],
   },
-
+  {
+    id: "cv-21",
+    title: "Historical Blueprints & Engineering Drawing Digitizer",
+    description:
+      "This custom OCR system is designed to digitize and extract critical information from old, faded, or sepia-toned engineering drawings and blueprints. It accurately identifies and extracts handwritten annotations, dimensions, component labels, and revision numbers, converting them into searchable, structured digital data. This preserves valuable historical information, prevents loss due to physical degradation, and enables efficient search and integration with modern CAD/PLM systems.",
+    category: "deep-learning",
+    highlightKeyword: "Custom OCR, Image Pre-processing, PLM Integration",
+    image: "/dl/dl-1.png",
+    technologies: [
+      "Azure VMs",
+      "PyTorch",
+      "PostgreSQL",
+      "TensorFlow",
+      "PyTorch",
+      "PaddleOCR",
+      "Tesseract OCR",
+      "Streamlit",
+      "Python",
+      "OpenCV",
+      "Scikit-image",
+      "FastAPI",
+      "Trasnfer Learning",
+      "Object Detection",
+      "Image Classification"
+    ],
+    demoUrl: "#",
+    githubUrl: "#",
+    completionDate: "August 2025",
+    features: [
+      ""
+    ],
+  },
+  {
+    id: "cv-22",
+    title: "Damaged Freight Label Processor",
+    description:
+      "Never lose a package to a bad label again. This specialized system is designed to rescue data from compromised shipping documents, whether they're wrinkled, smudged, or ripped. By accurately isolating and reading damaged text and barcodes, it provides uninterrupted data flow for inventory management and package routing, even under poor conditions.",
+    category: "deep-learning",
+    highlightKeyword: "Custom OCR, Image Restoration, Real-Time Processing, Smudged Text",
+    image: "/dl/dl-2.png",
+    technologies: [
+      "Python",
+      "OpenCV",
+      "PyTorch",
+      "Customly Trained Hybrid Transformer",
+      "Scikit-image",
+      "PaddleOCR",
+      "Custom Data",
+      "Offline Custom Server for Deployment",
+      "FastAPI",
+      "Object Detection",
+      "Image Classification"
+    ],
+    demoUrl: "#",
+    githubUrl: "#",
+    completionDate: "August 2025",
+    features: [
+      ""
+    ],
+  },
   {
     id: "cv-6",
     title: "Medical Image Segmentation",
