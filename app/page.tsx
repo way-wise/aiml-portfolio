@@ -8,8 +8,6 @@ import { portfolioItems } from "@/lib/portfolio-data";
 import Image from "next/image";
 import { sectionInfo } from "@/lib/portfolio-data";
 
-type SectionKey = keyof typeof sectionInfo;
-
 export default function Home() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<string>("all");

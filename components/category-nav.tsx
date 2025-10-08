@@ -5,10 +5,12 @@ import { cn } from "@/lib/utils"
 const defaultCategories = [
   { id: "deep-learning", label: "Deep Learning" },
   { id: "time-series", label: "Time Series Forecasting" },
-  { id: "llm", label: "Multimodal Learning" },
+  { id: "multi-modal", label: "Multimodal Learning" },
+  { id: "distillation", label: "Distillation" },
   { id: "machine-learning", label: "Machine Learning" },
   { id: "reinforcement-learning", label: "Reinforcement Learning" },
-  { id: "nlp", label: "Natural Language Processing" },
+  { id: "federated-learning", label: "Federated Learning" },
+  { id: "natural-language-processing", label: "Natural Language Processing" },
 ]
 
 interface CategoryNavProps {
@@ -28,13 +30,13 @@ export default function CategoryNav({ activeCategory, onCategoryChange, categori
     switch (category) {
       case "machine-learning":
         return "from-emerald-500 via-teal-500 to-cyan-600"
-      case "computer-vision":
+      case "deep-learning":
         return "from-cyan-500 via-blue-500 to-indigo-600"
       case "deep-learning":
         return "from-indigo-500 via-purple-500 to-pink-600"
       case "nlp":
         return "from-amber-500 via-orange-500 to-red-500"
-      case "llm":
+      case "multi-modal":
         return "from-rose-500 via-pink-500 to-purple-600"
       case "time-series":
         return "from-violet-500 via-purple-500 to-fuchsia-600"
