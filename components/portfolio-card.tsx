@@ -53,7 +53,7 @@ export default function PortfolioCard({
   return (
     <div
       className={cn(
-        "max-w-[400px] group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl bg-white shadow-md p-0",
+        "max-w-[400px] group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl bg-white border border-gray-100 p-0",
         {
           [`outline outline-2 outline-offset-2 outline-orange-500`]: isHighlighted,
         }
@@ -73,16 +73,20 @@ export default function PortfolioCard({
             alt={item.title}
             width={600}
             height={400}
-            className="w-full h-96 object-cover md:object-contain"
+            className="w-full h-full max-h-80 object-cover md:object-cover"
           />
-          <span
-            className={cn(
-              "absolute top-4 left-4 text-white px-3 py-1 rounded-full text-sm font-medium",
-              getCategoryColor(item.category)
-            )}
-          >
-            {item.highlightKeyword}
-          </span>
+          <div className="absolute inset-x-2 top-2 flex flex-wrap gap-1">
+            {item.highlightKeyword?.split(',').map((keyword, index) => (
+              <span
+                key={index}
+                className={cn(
+                  "text-white px-1.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600"
+                )}
+              >
+                {keyword.trim()}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="p-6">

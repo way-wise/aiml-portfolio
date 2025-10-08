@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { ArrowDown, ExternalLink, Github } from "lucide-react";
+import { ArrowDown, ExternalLink, Github, Menu, X } from "lucide-react";
 import CategoryNav from "@/components/category-nav";
 import PortfolioCard from "@/components/portfolio-card";
 import { portfolioItems } from "@/lib/portfolio-data";
@@ -14,6 +14,7 @@ export default function Home() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [highlightedIds, setHighlightedIds] = useState<string[]>([]);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
 
 
@@ -41,6 +42,7 @@ export default function Home() {
   // Toggle category visibility
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
+    setIsDrawerOpen(false); // Close drawer when category is selected
   };
 
   return (
@@ -58,8 +60,9 @@ export default function Home() {
               className="w-24 sm:w-32 md:w-40 lg:w-[180px] h-auto"
             />
           </div>
-          {/* Title and Email - Upper Right */}
-          <div className="text-right flex-shrink min-w-0">
+          
+          {/* Title and Email - Center */}
+          <div className="text-center flex-shrink min-w-0 flex-1">
             <h1 className="text-sm sm:text-xl md:text-2xl text-orange-600 font-bold leading-tight">
               Our Dynamic Portfolio
             </h1>
@@ -70,17 +73,68 @@ export default function Home() {
               support@waywisetech.com
             </a>
           </div>
+
+          {/* Hamburger Menu - Right */}
+          <div className="flex-shrink-0">
+            <button
+              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Toggle categories menu"
+            >
+              {isDrawerOpen ? (
+                <X size={24} className="text-gray-700" />
+              ) : (
+                <Menu size={24} className="text-gray-700" />
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Category Navigation - Centered Below Header */}
-      <div className="bg-white py-3 sm:py-4 md:py-6 px-2 sm:px-4 border-b-2 border-gray-100 sticky top-[56px] sm:top-[64px] md:top-[72px] z-40 overflow-x-auto scrollbar-hide">
-        <div className="flex justify-center min-w-max mx-auto px-2">
+      {/* Category Navigation - Hidden on Mobile, Visible on Desktop */}
+      <div className="hidden md:block bg-white py-3 sm:py-4 md:py-6 px-2 sm:px-4 border-b-2 border-gray-100 sticky top-[48px] sm:top-[56px] md:top-[72px] z-40">
+        <div className="flex justify-center mx-auto px-2">
           <CategoryNav
             activeCategory={activeCategory}
             onCategoryChange={handleCategoryChange}
             categories={["all", ...categories]}
           />
+        </div>
+      </div>
+
+      {/* Mobile Category Drawer */}
+      <div className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ease-out ${isDrawerOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        {/* Backdrop */}
+        <div 
+          className={`absolute inset-0 bg-black transition-opacity duration-300 ease-out ${isDrawerOpen ? 'opacity-50' : 'opacity-0'}`}
+          onClick={() => setIsDrawerOpen(false)}
+        />
+        
+        {/* Drawer */}
+        <div className={`absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-all duration-300 ease-out ${isDrawerOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+          {/* Drawer Header */}
+          <div className="flex items-center justify-between p-4 border-b border-gray-200">
+            <h2 className="text-lg font-semibold text-gray-900">Categories</h2>
+            <button
+              onClick={() => setIsDrawerOpen(false)}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Close menu"
+            >
+              <X size={20} className="text-gray-700" />
+            </button>
+          </div>
+          
+          {/* Drawer Content */}
+          <div className="p-4 overflow-y-auto h-full">
+            <div className="space-y-2">
+              <CategoryNav
+                activeCategory={activeCategory}
+                onCategoryChange={handleCategoryChange}
+                categories={["all", ...categories]}
+                isVertical={true}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
