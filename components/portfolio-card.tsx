@@ -53,7 +53,7 @@ export default function PortfolioCard({
   return (
     <div
       className={cn(
-        "max-w-[400px] group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl bg-white border border-gray-100 p-0",
+        "sm:max-w-[400px] group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl bg-white border border-gray-100 p-0",
         {
           [`outline outline-2 outline-offset-2 outline-orange-500`]: isHighlighted,
         }
@@ -67,42 +67,80 @@ export default function PortfolioCard({
           }
         )}
       >
-        <div className="relative group-hover:scale-105 transition-transform duration-500">
-          <Image
-            src={item.image || "/placeholder.svg"}
-            alt={item.title}
-            width={600}
-            height={400}
-            className="w-full h-full max-h-80 object-cover md:object-cover"
-          />
-          <div className="absolute inset-x-2 top-2 flex flex-wrap gap-1">
-            {item.highlightKeyword?.split(',').map((keyword, index) => (
-              <span
-                key={index}
-                className={cn(
-                  "text-white px-1.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600"
-                )}
-              >
-                {keyword.trim()}
-              </span>
-            ))}
+        {/* Mobile: Horizontal layout (image left, content right) */}
+        <div className="flex flex-row sm:hidden h-40">
+          {/* Image section - left side */}
+          <div className="relative w-28 h-full flex-shrink-0 group-hover:scale-105 transition-transform duration-500">
+            <Image
+              src={item.image || "/placeholder.svg"}
+              alt={item.title}
+              width={96}
+              height={96}
+              className="w-full h-full object-cover rounded-l-xl"
+            />
+          </div>
+          
+          {/* Content section - right side */}
+          <div className="flex-1 px-3 py-2 min-w-0 flex flex-col justify-center">
+            <h3 className="text-sm font-bold mb-1 line-clamp-2">{item.title}</h3>
+            <p className="text-gray-600 text-xs mb-2 line-clamp-3">{item.description}</p>
+            <div className="flex flex-wrap gap-1">
+              {item.technologies.slice(0, 3).map((tech, index) => (
+                <span
+                  key={index}
+                  className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-[10px] font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+              {item.technologies.length > 3 && (
+                <span className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-[10px] font-medium">
+                  +{item.technologies.length - 3}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
-        <div className="p-6">
-          <p className="block">
-            <h3 className="text-xl font-bold mb-2">{item.title}</h3>{" "}
-          </p>
-          <p className="text-gray-600 mb-4">{item.description}</p>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {item.technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs font-medium"
-              >
-                {tech}
-              </span>
-            ))}
+        {/* Desktop: Vertical layout (image top, content bottom) */}
+        <div className="hidden sm:block">
+          <div className="relative group-hover:scale-105 transition-transform duration-500">
+            <Image
+              src={item.image || "/placeholder.svg"}
+              alt={item.title}
+              width={600}
+              height={400}
+              className="w-full h-full max-h-80 object-cover md:object-cover"
+            />
+            <div className="absolute inset-x-2 top-2 flex flex-wrap gap-1">
+              {item.highlightKeyword?.split(',').map((keyword, index) => (
+                <span
+                  key={index}
+                  className={cn(
+                    "text-white px-1.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-orange-600"
+                  )}
+                >
+                  {keyword.trim()}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="p-6">
+            <p className="block">
+              <h3 className="text-xl font-bold mb-2">{item.title}</h3>{" "}
+            </p>
+            <p className="text-gray-600 mb-4">{item.description}</p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {item.technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 

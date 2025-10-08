@@ -139,14 +139,14 @@ export default function Home() {
       {/* Portfolio Cards List */}
       <div className="py-12 sm:py-16 md:py-24 lg:py-[120px] px-3 sm:px-4 md:px-6 bg-white">
         <div className="px-2 sm:px-4 md:px-8 lg:px-16 max-w-[1600px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6 md:gap-8 justify-items-center">
             {(activeCategory === "all"
               ? portfolioItems
               : itemsByCategory[activeCategory] || []
             ).map((item) => (
               <div
                 key={item.id}
-                className="w-full max-w-sm transition-all duration-500 opacity-100 translate-y-0"
+                className="w-full transition-all duration-500 opacity-100 translate-y-0"
               >
                 <PortfolioCard
                   item={item}
