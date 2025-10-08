@@ -407,7 +407,7 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "This custom OCR system is designed to digitize and extract critical information from old, faded, or sepia-toned engineering drawings and blueprints. It accurately identifies and extracts handwritten annotations, dimensions, component labels, and revision numbers, converting them into searchable, structured digital data. This preserves valuable historical information, prevents loss due to physical degradation, and enables efficient search and integration with modern CAD/PLM systems.",
     category: "deep-learning",
-    highlightKeyword: "Custom OCR, Image Pre-processing, PLM Integration",
+    highlightKeyword: "Custom OCR, PLM Integration",
     image: "/dl/dl-1.png",
     technologies: [
       "Azure VMs",
@@ -439,7 +439,7 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "Never lose a package to a bad label again. This specialized system is designed to rescue data from compromised shipping documents, whether they're wrinkled, smudged, or ripped. By accurately isolating and reading damaged text and barcodes, it provides uninterrupted data flow for inventory management and package routing, even under poor conditions.",
     category: "deep-learning",
-    highlightKeyword: "Custom OCR, Image Restoration, Real-Time Processing, Smudged Text",
+    highlightKeyword: "Custom OCR, Image Restoration, Real-Time",
     image: "/dl/dl-2.png",
     technologies: [
       "Python",
@@ -498,7 +498,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Sentimail",
     description:
       "A smart NLP tool that automatically analyzes incoming customer support emails and classifies them into Positive, Negative, or Neutral sentiment.",
-    category: "nlp",
+    category: "natural-language-processing",
     highlightKeyword: "NLP",
     image: "/ai/nlp.png",
     technologies: ["Python", "TensorFlow", "PostgreSQL"],
@@ -518,7 +518,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Advanced Sentiment Analysis System",
     description:
       "A state-of-the-art sentiment analysis system processing 1M+ customer reviews daily with 95% accuracy. Features custom BERT architecture, real-time analysis, multi-language support, and emotion detection for improved customer service.",
-    category: "nlp",
+    category: "natural-language-processing",
     highlightKeyword: "NLP",
     image: "/ai/nlp1.png",
     technologies: [
@@ -546,7 +546,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Multilingual Text Summarization",
     description:
       "A powerful summarization system for generating concise, informative summaries across 8 languages. Supports abstractive/extractive modes, plagiarism detection, and custom length summaries for cross-platform use.",
-    category: "nlp",
+    category: "natural-language-processing",
     highlightKeyword: "NLP",
     image: "/ai/nlp2.png",
     technologies: [
@@ -574,7 +574,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Question Answering System",
     description:
       "An advanced question answering system using retrieval-augmented generation and knowledge graph integration. Delivers fast, accurate answers across complex multi-document datasets.",
-    category: "nlp",
+    category: "natural-language-processing",
     highlightKeyword: "NLP",
     image: "/ai/nlp3.png",
     technologies: [
@@ -602,7 +602,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "AI-Powered Resume Screening & Ranking System",
     description:
       "Built an AI-driven resume parsing and ranking platform that uses semantic similarity to match candidate resumes with job descriptions, reducing manual screening time by 80%.",
-    category: "nlp",
+    category: "natural-language-processing",
     highlightKeyword: "NLP",
     image: "/nlp/nlp5.png",
     technologies: [
@@ -629,7 +629,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Contract Clause Extraction & Compliance Checker",
     description:
       "Developed a clause extraction and validation engine that automates legal contract review and ensures compliance with internal and regulatory standards.",
-    category: "nlp",
+    category: "natural-language-processing",
     highlightKeyword: "NLP",
     image: "/nlp/nlp6.png",
     technologies: [
@@ -655,7 +655,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Voice-to-Text Transcription and NLP Insight Engine",
     description:
       "Built a real-time voice-to-text and NLP engine for contact centers that transcribes calls, extracts insights, classifies intent, and generates call summaries for QA and training.",
-    category: "nlp",
+    category: "natural-language-processing",
     highlightKeyword: "NLP",
     image: "/nlp/nlp7.png",
     technologies: [
@@ -681,7 +681,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Named Entity Linking (NEL) for Scientific Documents",
     description:
       "Implemented an advanced NEL system that disambiguates and links scientific entities in academic texts to external knowledge bases like PubMed and WikiData, boosting document retrieval and researcher productivity.",
-    category: "nlp",
+    category: "natural-language-processing",
     highlightKeyword: "NLP",
     image: "/nlp/nlp8.png",
     technologies: ["Python 3.9", "SciBERT", "Faiss", "FastAPI", "Neo4j"],
@@ -702,7 +702,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "SmartLegalBot – AI Legal Assistant for Contract Review",
     description:
       "SmartLegalBot is an AI-powered assistant that helps users review legal contracts, highlight risky clauses, suggest simplified rewrites, and answer basic legal queries — all using a fine-tuned LLM trained on legal documents.",
-    category: "llm",
+    category: "multi-modal",
     highlightKeyword: "LLM",
     image: "/ai/llm.png",
     technologies: ["Node.js", "Socket.io", "PostgreSQL"],
@@ -722,7 +722,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Custom LLM Development",
     description:
       "Developed a custom large language model from scratch, optimized for enterprise applications. The model was trained on domain-specific data and fine-tuned for various business use cases, achieving state-of-the-art performance while maintaining efficiency.",
-    category: "llm",
+    category: "multi-modal",
     highlightKeyword: "LLM",
     image: "/ai/llm1.png",
     technologies: [
@@ -755,7 +755,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "LLM Fine-tuning Framework",
     description:
       "Created a comprehensive framework for fine-tuning large language models efficiently. The framework supports various fine-tuning methods, including LoRA, PEFT, and full fine-tuning, with automated optimization and monitoring capabilities.",
-    category: "llm",
+    category: "multi-modal",
     highlightKeyword: "LLM",
     image: "llm/l3.png",
     technologies: [
@@ -785,7 +785,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "RAG-Based Enterprise Knowledge Assistant",
     description:
       "Built a context-aware RAG assistant to answer internal employee queries by grounding LLM responses in enterprise documents, policies, and knowledge bases.",
-    category: "llm",
+    category: "multi-modal",
     highlightKeyword: "RAG",
     image: "llm/l4.png",
     technologies: [
@@ -812,7 +812,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Multilingual LLM Chatbot for Customer Support",
     description:
       "Created a real-time multilingual LLM chatbot capable of handling support queries in 15+ languages with sentiment-aware response tuning.",
-    category: "llm",
+    category: "multi-modal",
     highlightKeyword: "Multilingual",
     image: "llm/l5.png",
     technologies: [
@@ -839,7 +839,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "LLM-based Content Generation Engine",
     description:
       "Engineered a scalable content generation pipeline for SEO blogs, product descriptions, and brand copy using GPT-J and T5 models.",
-    category: "llm",
+    category: "multi-modal",
     highlightKeyword: "Content",
     image: "/llm/l6.png",
     technologies: [
@@ -866,7 +866,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Autonomous Research Agent using LLMs",
     description:
       "Developed an autonomous LLM agent for literature reviews with semantic paper search, PDF summarization, and research graph generation.",
-    category: "llm",
+    category: "multi-modal",
     highlightKeyword: "Research",
     image: "/llm/l7.png",
     technologies: ["Python 3.10", "LangChain", "GPT API", "PyMuPDF", "Neo4j"],
@@ -886,7 +886,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "LLM-Powered Code Generation & Review Assistant",
     description:
       "Built an AI coding assistant that generates boilerplate code, reviews PRs, and flags anti-patterns with LLM-powered insights.",
-    category: "llm",
+    category: "multi-modal",
     highlightKeyword: "Code",
     image: "/llm/l8.png",
     technologies: [
@@ -990,7 +990,7 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "Predicts exactly how much product customers will buy at different times and locations.",
     category: "time-series",
-    highlightKeyword: "Retail, E-commerce, Supply Chain Management",
+    highlightKeyword: "Retail, E-commerce, SCM",
     image: "/time-series/time-series-4.jpeg",
     technologies: [
       "FastAPI",
@@ -1024,7 +1024,7 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "This project is a Multi Agent Reinforcement Learning (MARL) system designed to automatically optimize complex supply chains. It uses cooperating AI agents, a Production Agent at the factory and Distribution Agents at the warehouses, to make real time decisions on what to produce and where to ship it. The goal is to minimize total operational costs production holding and transport while maximizing customer fulfillment avoiding stockouts under volatile demand.",
     category: "reinforcement-learning",
-    highlightKeyword: "Multi Agent Reinforcement Learning, Supply Chain Management",
+    highlightKeyword: "Multi Agent Reinforcement Learning",
     image: "/rl/rl-1.jpeg",
     technologies: [
       "PyTorch",
@@ -1049,7 +1049,7 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "This project develops a Reinforcement Learning RL agent to serve as a self learning advanced controller for complex industrial equipment. Unlike rigid traditional controllers, the RL agent dynamically adjusts system parameters like temperature and flow in real time. The agent is trained to maximize product quality and yield while minimizing energy consumption and strictly adhering to all safety constraints. The final deliverable is a high fidelity simulation demonstrating the RL agent's superior efficiency and throughput compared to a benchmark control system.",
     category: "reinforcement-learning",
-    highlightKeyword: "Adaptive Process Control, Process Optimization, Maximizing Yield",
+    highlightKeyword: "Adaptive Process Control",
     image: "/rl/rl-2.jpg",
     technologies: [
       "PyTorch",
@@ -1068,7 +1068,72 @@ export const portfolioItems: PortfolioItem[] = [
       ""
     ],
   },
-  
+    {
+    id: "reinforcement-learning-3",
+    title: "Conveyor Speed Optimization by RL Agent in Real Time",
+    description:
+      "This project tackles a common industrial control dilemma: finding the sweet spot between saving energy and boosting production. We use foundational RL algorithms to train a smart system to dynamically manage conveyor belt speed in real-time, ensuring we get the maximum amount of product moved with the minimum possible energy usage.",
+    category: "reinforcement-learning",
+    highlightKeyword: "RL Agent, Manufacturing, Conveyor Belt",
+    image: "/rl/rl-3.png",
+    technologies: [
+      "Q-Learning",
+      "SARSA",
+      "Python",
+      "Physics",
+      "Simulation"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
+   {
+    id: "reinforcement-learning-4",
+    title: "RL-Powered Personal E-Commerce Navigator",
+    description:
+      "Traditional e-commerce optimization (like simple A/B testing or static recommendation engines) focuses on maximizing the immediate click or purchase. This RL approach introduces a long-term goal: the agent learns that sometimes, not showing a high-value product right now, or even offering a small discount, is the optimal action because it builds trust, prevents customer burnout, and maximizes the customer's total spending over the next year (CLV).",
+    category: "reinforcement-learning",
+    highlightKeyword: "E-Commerce, RL Shopping Assistant Agent",
+    image: "/rl/rl-4.png",
+    technologies: [
+      "Deep Q-Network (DQN)",
+      "Policy Gradient (A2C/A3C)",
+      "Python",
+      "Simulation"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
+  {
+    id: "distillation-1",
+    title: "Mobile-based Custom Product Recognition",
+    description:
+      "Distill a large image classification model for deployment in a mobile app, allowing users to instantly identify products by taking a picture. This improves the customer experience with less lag time.",
+    category: "distillation",
+    highlightKeyword: "E-Commerce, On-Device AI",
+    image: "/distill/distil-1.png",
+    technologies: [
+      "PyTorch",
+      "TFLite",
+      "ONNX",
+      "Android Studio",
+      "Python",
+      "MobileNet"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
 ];
 
 export const sectionInfo = {

@@ -74,7 +74,7 @@ export default function Home() {
       </header>
 
       {/* Category Navigation - Centered Below Header */}
-      <div className="bg-white py-3 sm:py-4 md:py-6 px-2 sm:px-4 border-b-2 border-gray-100 sticky top-[56px] sm:top-[64px] md:top-[72px] z-40 overflow-x-auto scrollbar-hide">
+      <div className="bg-white py-3 sm:py-4 md:py-2 px-2 sm:px-4 border-b-2 border-gray-100 sticky top-[56px] sm:top-[64px] md:top-[72px] z-40 overflow-x-auto scrollbar-hide">
         <div className="flex justify-center min-w-max mx-auto px-2">
           <CategoryNav
             activeCategory={activeCategory}
