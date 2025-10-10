@@ -15,6 +15,205 @@ export interface PortfolioItem {
 }
 
 export const portfolioItems: PortfolioItem[] = [
+   {
+    id: "cv-21",
+    title: "Historical Blueprints & Engineering Drawing Digitizer",
+    description:
+      "This custom OCR system is designed to digitize and extract critical information from old, faded, or sepia-toned engineering drawings and blueprints. It accurately identifies and extracts handwritten annotations, dimensions, component labels, and revision numbers, converting them into searchable, structured digital data. This preserves valuable historical information, prevents loss due to physical degradation, and enables efficient search and integration with modern CAD/PLM systems.",
+    category: "deep-learning",
+    highlightKeyword: "Custom OCR, PLM Integration",
+    image: "/dl/dl-1.png",
+    technologies: [
+      "Azure VMs",
+      "PyTorch",
+      "PostgreSQL",
+      "TensorFlow",
+      "PyTorch",
+      "PaddleOCR",
+      "Tesseract OCR",
+      "Streamlit",
+      "Python",
+      "OpenCV",
+      "Scikit-image",
+      "FastAPI",
+      "Trasnfer Learning",
+      "Object Detection",
+      "Image Classification"
+    ],
+    demoUrl: "#",
+    githubUrl: "#",
+    completionDate: "August 2025",
+    features: [
+      ""
+    ],
+  },
+    {
+    id: "cv-22",
+    title: "Damaged Freight Label Processor",
+    description:
+      "Never lose a package to a bad label again. This specialized system is designed to rescue data from compromised shipping documents, whether they're wrinkled, smudged, or ripped. By accurately isolating and reading damaged text and barcodes, it provides uninterrupted data flow for inventory management and package routing, even under poor conditions.",
+    category: "deep-learning",
+    highlightKeyword: "Custom OCR, Image Restoration, Real-Time",
+    image: "/dl/dl-2.png",
+    technologies: [
+      "Python",
+      "OpenCV",
+      "PyTorch",
+      "Customly Trained Hybrid Transformer",
+      "Scikit-image",
+      "PaddleOCR",
+      "Custom Data",
+      "Offline Custom Server for Deployment",
+      "FastAPI",
+      "Object Detection",
+      "Image Classification"
+    ],
+    demoUrl: "#",
+    githubUrl: "#",
+    completionDate: "August 2025",
+    features: [
+      ""
+    ],
+  },
+     {
+    id: "reinforcement-learning-4",
+    title: "RL-Powered Personal E-Commerce Navigator",
+    description:
+      "Traditional e-commerce optimization (like simple A/B testing or static recommendation engines) focuses on maximizing the immediate click or purchase. This RL approach introduces a long-term goal: the agent learns that sometimes, not showing a high-value product right now, or even offering a small discount, is the optimal action because it builds trust, prevents customer burnout, and maximizes the customer's total spending over the next year (CLV).",
+    category: "reinforcement-learning",
+    highlightKeyword: "E-Commerce, RL Shopping Assistant Agent",
+    image: "/rl/rl-4.png",
+    technologies: [
+      "Deep Q-Network (DQN)",
+      "Policy Gradient (A2C/A3C)",
+      "Python",
+      "Simulation"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
+      {
+    id: "reinforcement-learning-3",
+    title: "Conveyor Speed Optimization by RL Agent in Real Time",
+    description:
+      "This project tackles a common industrial control dilemma: finding the sweet spot between saving energy and boosting production. We use foundational RL algorithms to train a smart system to dynamically manage conveyor belt speed in real-time, ensuring we get the maximum amount of product moved with the minimum possible energy usage.",
+    category: "reinforcement-learning",
+    highlightKeyword: "RL Agent, Manufacturing, Conveyor Belt",
+    image: "/rl/rl-3.png",
+    technologies: [
+      "Q-Learning",
+      "SARSA",
+      "Python",
+      "Physics",
+      "Simulation"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
+  {
+    id: "reinforcement-learning-2",
+    title: "Adaptive Process Control for Chemical/Manufacturing Plants",
+    description:
+      "This project develops a Reinforcement Learning RL agent to serve as a self learning advanced controller for complex industrial equipment. Unlike rigid traditional controllers, the RL agent dynamically adjusts system parameters like temperature and flow in real time. The agent is trained to maximize product quality and yield while minimizing energy consumption and strictly adhering to all safety constraints. The final deliverable is a high fidelity simulation demonstrating the RL agent's superior efficiency and throughput compared to a benchmark control system.",
+    category: "reinforcement-learning",
+    highlightKeyword: "Adaptive Process Control",
+    image: "/rl/rl-2.jpg",
+    technologies: [
+      "PyTorch",
+      "Ray RLlib",
+      "Python",
+      "Plotly",
+      "Azure DevOps",
+      "Docker",
+      "NumPy",
+      "FastAPI"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
+  {
+    id: "reinforcement-learning-1",
+    title: "Dynamic Inventory and Production Planning for a Supply Chain",
+    description:
+      "This project is a Multi Agent Reinforcement Learning (MARL) system designed to automatically optimize complex supply chains. It uses cooperating AI agents, a Production Agent at the factory and Distribution Agents at the warehouses, to make real time decisions on what to produce and where to ship it. The goal is to minimize total operational costs production holding and transport while maximizing customer fulfillment avoiding stockouts under volatile demand.",
+    category: "reinforcement-learning",
+    highlightKeyword: "Multi Agent Reinforcement Learning",
+    image: "/rl/rl-1.jpeg",
+    technologies: [
+      "PyTorch",
+      "Stable Baselines3",
+      "Pandas",
+      "Seaborn",
+      "AWS Step Functions",
+      "Docker",
+      "Flask",
+      "Typescript"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
+    {
+    id: "distillation-1",
+    title: "Mobile-based Custom Product Recognition",
+    description:
+      "Distilled a large image classification model for deployment in a mobile app, allowing users to instantly identify products by taking a picture. This improves the customer experience with less lag time. The project uses Python and the PyTorch framework to train the initial, larger Teacher model. This model is trained on a comprehensive dataset of custom products to achieve high classification accuracy. The final Student model is based on MobileNet, a family of efficient convolutional neural networks specifically designed for mobile and embedded vision applications. MobileNet uses depthwise separable convolutions to dramatically reduce the number of parameters and computational cost while retaining high accuracy.",
+    category: "distillation",
+    highlightKeyword: "E-Commerce, On-Device AI",
+    image: "/distill/distil-1.png",
+    technologies: [
+      "PyTorch",
+      "TFLite",
+      "ONNX",
+      "Android Studio",
+      "Python",
+      "MobileNet"
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
+  {
+    id: "time-series-1",
+    title: "Forecasting Application for Fisheries Production",
+    description:
+      "This project outlines a sophisticated, cloud-native Forecasting Application for Fisheries Production designed to provide critical, data-driven insights for the fisheries economy, thereby supporting sustainable management and optimized business operations. The application is built on a robust, microservices architecture utilizing Python 3.9 as the core development language.",
+    category: "time-series",
+    highlightKeyword: "Fisheries, Agriculture",
+    image: "/time-series/time-series-1.jpeg",
+    technologies: [
+      "Python 3.9",
+      "Prophet",
+      "SARIMA",
+      "XGBoost",
+      "FastAPI",
+      "Docker",
+    ],
+    demoUrl: "",
+    githubUrl: "",
+    completionDate: "",
+    features: [
+      ""
+    ],
+  },
   {
     id: "ml-0",
     title: "Predictive Maintenance System",
@@ -399,66 +598,6 @@ export const portfolioItems: PortfolioItem[] = [
       "Anti-spoofing measures",
       "Real-time monitoring",
       "Multi-factor authentication",
-    ],
-  },
-  {
-    id: "cv-21",
-    title: "Historical Blueprints & Engineering Drawing Digitizer",
-    description:
-      "This custom OCR system is designed to digitize and extract critical information from old, faded, or sepia-toned engineering drawings and blueprints. It accurately identifies and extracts handwritten annotations, dimensions, component labels, and revision numbers, converting them into searchable, structured digital data. This preserves valuable historical information, prevents loss due to physical degradation, and enables efficient search and integration with modern CAD/PLM systems.",
-    category: "deep-learning",
-    highlightKeyword: "Custom OCR, PLM Integration",
-    image: "/dl/dl-1.png",
-    technologies: [
-      "Azure VMs",
-      "PyTorch",
-      "PostgreSQL",
-      "TensorFlow",
-      "PyTorch",
-      "PaddleOCR",
-      "Tesseract OCR",
-      "Streamlit",
-      "Python",
-      "OpenCV",
-      "Scikit-image",
-      "FastAPI",
-      "Trasnfer Learning",
-      "Object Detection",
-      "Image Classification"
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2025",
-    features: [
-      ""
-    ],
-  },
-  {
-    id: "cv-22",
-    title: "Damaged Freight Label Processor",
-    description:
-      "Never lose a package to a bad label again. This specialized system is designed to rescue data from compromised shipping documents, whether they're wrinkled, smudged, or ripped. By accurately isolating and reading damaged text and barcodes, it provides uninterrupted data flow for inventory management and package routing, even under poor conditions.",
-    category: "deep-learning",
-    highlightKeyword: "Custom OCR, Image Restoration, Real-Time",
-    image: "/dl/dl-2.png",
-    technologies: [
-      "Python",
-      "OpenCV",
-      "PyTorch",
-      "Customly Trained Hybrid Transformer",
-      "Scikit-image",
-      "PaddleOCR",
-      "Custom Data",
-      "Offline Custom Server for Deployment",
-      "FastAPI",
-      "Object Detection",
-      "Image Classification"
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-    completionDate: "August 2025",
-    features: [
-      ""
     ],
   },
   {
@@ -907,36 +1046,14 @@ export const portfolioItems: PortfolioItem[] = [
       "Anti-pattern and code smell detection",
     ],
   },
-  {
-    id: "time-series-1",
-    title: "Forecasting Application for Fisheries Production",
-    description:
-      "Prediction of fisheries production to provide insights on fisheries economy.",
-    category: "time-series",
-    highlightKeyword: "Industry: Fisheries, Agriculture",
-    image: "/time-series/time-series-1.jpeg",
-    technologies: [
-      "Python 3.9",
-      "Prophet",
-      "SARIMA",
-      "XGBoost",
-      "FastAPI",
-      "Docker",
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      ""
-    ],
-  },
+  
   {
     id: "time-series-2",
     title: "Real-time Stock Market Prediction",
     description:
       "Real-time stock market Prediction for managing stock profile.",
     category: "time-series",
-    highlightKeyword: "Industry: Stock Market, Trading",
+    highlightKeyword: "Stock Market, Trading",
     image: "/time-series/time-series-2.png",
     technologies: [
       "Python 3.9",
@@ -960,7 +1077,7 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "Uses time series sensor data from critical machines to forecast RUL.",
     category: "time-series",
-    highlightKeyword: "Industry: Manufacturing, Energy, IIoT",
+    highlightKeyword: "Manufacturing, Energy, IIoT",
     image: "/time-series/time-series-3.jpeg",
     technologies: [
       "Python 3.10",
@@ -1016,122 +1133,6 @@ export const portfolioItems: PortfolioItem[] = [
       "Multi-language support",
       "Slack and GitHub integration",
       "Anti-pattern and code smell detection",
-    ],
-  },
-   {
-    id: "reinforcement-learning-1",
-    title: "Dynamic Inventory and Production Planning for a Supply Chain",
-    description:
-      "This project is a Multi Agent Reinforcement Learning (MARL) system designed to automatically optimize complex supply chains. It uses cooperating AI agents, a Production Agent at the factory and Distribution Agents at the warehouses, to make real time decisions on what to produce and where to ship it. The goal is to minimize total operational costs production holding and transport while maximizing customer fulfillment avoiding stockouts under volatile demand.",
-    category: "reinforcement-learning",
-    highlightKeyword: "Multi Agent Reinforcement Learning",
-    image: "/rl/rl-1.jpeg",
-    technologies: [
-      "PyTorch",
-      "Stable Baselines3",
-      "Pandas",
-      "Seaborn",
-      "AWS Step Functions",
-      "Docker",
-      "Flask",
-      "Typescript"
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      ""
-    ],
-  },
-  {
-    id: "reinforcement-learning-2",
-    title: "Adaptive Process Control for Chemical/Manufacturing Plants",
-    description:
-      "This project develops a Reinforcement Learning RL agent to serve as a self learning advanced controller for complex industrial equipment. Unlike rigid traditional controllers, the RL agent dynamically adjusts system parameters like temperature and flow in real time. The agent is trained to maximize product quality and yield while minimizing energy consumption and strictly adhering to all safety constraints. The final deliverable is a high fidelity simulation demonstrating the RL agent's superior efficiency and throughput compared to a benchmark control system.",
-    category: "reinforcement-learning",
-    highlightKeyword: "Adaptive Process Control",
-    image: "/rl/rl-2.jpg",
-    technologies: [
-      "PyTorch",
-      "Ray RLlib",
-      "Python",
-      "Plotly",
-      "Azure DevOps",
-      "Docker",
-      "NumPy",
-      "FastAPI"
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      ""
-    ],
-  },
-    {
-    id: "reinforcement-learning-3",
-    title: "Conveyor Speed Optimization by RL Agent in Real Time",
-    description:
-      "This project tackles a common industrial control dilemma: finding the sweet spot between saving energy and boosting production. We use foundational RL algorithms to train a smart system to dynamically manage conveyor belt speed in real-time, ensuring we get the maximum amount of product moved with the minimum possible energy usage.",
-    category: "reinforcement-learning",
-    highlightKeyword: "RL Agent, Manufacturing, Conveyor Belt",
-    image: "/rl/rl-3.png",
-    technologies: [
-      "Q-Learning",
-      "SARSA",
-      "Python",
-      "Physics",
-      "Simulation"
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      ""
-    ],
-  },
-   {
-    id: "reinforcement-learning-4",
-    title: "RL-Powered Personal E-Commerce Navigator",
-    description:
-      "Traditional e-commerce optimization (like simple A/B testing or static recommendation engines) focuses on maximizing the immediate click or purchase. This RL approach introduces a long-term goal: the agent learns that sometimes, not showing a high-value product right now, or even offering a small discount, is the optimal action because it builds trust, prevents customer burnout, and maximizes the customer's total spending over the next year (CLV).",
-    category: "reinforcement-learning",
-    highlightKeyword: "E-Commerce, RL Shopping Assistant Agent",
-    image: "/rl/rl-4.png",
-    technologies: [
-      "Deep Q-Network (DQN)",
-      "Policy Gradient (A2C/A3C)",
-      "Python",
-      "Simulation"
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      ""
-    ],
-  },
-  {
-    id: "distillation-1",
-    title: "Mobile-based Custom Product Recognition",
-    description:
-      "Distill a large image classification model for deployment in a mobile app, allowing users to instantly identify products by taking a picture. This improves the customer experience with less lag time.",
-    category: "distillation",
-    highlightKeyword: "E-Commerce, On-Device AI",
-    image: "/distill/distil-1.png",
-    technologies: [
-      "PyTorch",
-      "TFLite",
-      "ONNX",
-      "Android Studio",
-      "Python",
-      "MobileNet"
-    ],
-    demoUrl: "",
-    githubUrl: "",
-    completionDate: "",
-    features: [
-      ""
     ],
   },
 ];
